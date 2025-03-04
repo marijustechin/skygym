@@ -2,12 +2,21 @@ import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LoginSchema } from '../../schemas/LoginSchema';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { RootState, useAppDispatch, useAppSelector } from '../../store/store';
+import { loginUser, selectUser } from '../../store/features/user/authSlice';
+import { useEffect } from 'react';
 
 export const LoginForm = () => {
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(selectUser);
+  const { status, error } = useAppSelector((state: RootState) => state.auth);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -18,8 +27,31 @@ export const LoginForm = () => {
   });
 
   const onSubmit: SubmitHandler<z.infer<typeof LoginSchema>> = (formData) => {
-    console.log(formData);
+    dispatch(loginUser({ email: formData.email, password: formData.password }));
   };
+
+  // redux klaidas sinchronizuojam su formos klaidomis
+  useEffect(() => {
+    if (error) {
+      setError('root', { message: error });
+    }
+  }, [error, setError]);
+
+  // jei viskas ok, redirectinam
+  useEffect(() => {
+    if (status === 'succeeded') {
+      // ar useris, ar adminas
+      if (user.role === 'ADMIN') {
+        navigate('/suvestine');
+        return;
+      }
+
+      if (user.role === 'USER') {
+        navigate('/mano-paskyra');
+        return;
+      }
+    }
+  }, [status, user, navigate]);
 
   return (
     <form
@@ -69,7 +101,7 @@ export const LoginForm = () => {
         <p className="text-slate-400 mt-3 text-center">
           Pirmas kartas?{' '}
           <Link
-            className="text-slate-300 underline underline-offset-6 hover:text-slate-200"
+            className="text-blue-300 underline underline-offset-6 hover:text-blue-100"
             to={'/registracija'}
           >
             Prašome užsiregistruoti
