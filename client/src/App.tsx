@@ -12,8 +12,19 @@ import { TOCPage } from './pages/TOCPage';
 import { PricesPage } from './pages/PricesPage';
 import { UserHome } from './pages/user/UserHome';
 import { AdminHome } from './pages/admin/AdminHome';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { i18n } = useTranslation();
+  // atstatom kalbą
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    }
+  }, [i18n]);
+
   return (
     <BrowserRouter>
       <Routes>

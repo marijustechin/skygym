@@ -1,3 +1,9 @@
 {
-  "sveiki": "Angliskas tekstas su react-i18next"
+  "menu_home": "Home",
+  "menu_prices": "Prices",
+  "menu_toc": "TOC",
+  "menu_contacts": "Contacts",
+  "form_title_login": "Please login",
+  "form_placeholder_email": "Your email",
+  "form_placeholder_password": "Password"
 }

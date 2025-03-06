@@ -6,8 +6,10 @@ import { Link, useNavigate } from 'react-router';
 import { RootState, useAppDispatch, useAppSelector } from '../../store/store';
 import { loginUser, selectUser } from '../../store/features/user/authSlice';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const LoginForm = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
   const { status, error } = useAppSelector((state: RootState) => state.auth);
@@ -60,16 +62,16 @@ export const LoginForm = () => {
       className="max-w-sm mx-auto my-4"
     >
       <h1 className="text-slate-200 text-2xl text-center">
-        🔑 Prašome prisijungti
+        🔑 {t('form_title_login')}
       </h1>
       <div className="flex flex-col gap-2  border border-slate-500 rounded-xl p-2">
         <div className="flex flex-col">
           <input
             id="email"
-            className="form-input"
+            className="form-input autofill:transition-colors autofill:duration-[999999999s]"
             type="text"
             autoComplete="on"
-            placeholder="El.pašto adresas"
+            placeholder={t('form_placeholder_email')}
             {...register('email')}
           />
           {errors.email && (
@@ -81,10 +83,10 @@ export const LoginForm = () => {
         <div className="flex flex-col">
           <input
             id="password"
-            className="form-input"
+            className="form-input autofill:transition-colors autofill:duration-[999999999s]"
             type="password"
             autoComplete="on"
-            placeholder="Slaptažodis"
+            placeholder={t('form_placeholder_password')}
             {...register('password')}
           />
           {errors.password && (

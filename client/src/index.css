@@ -2,17 +2,13 @@
 
 @import 'tailwindcss';
 
-:root {
-  background: #1e293b; /* slate-800 */
-}
-
 html {
   font-family: 'Open Sans', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: 'wdth' 100;
-  color: seashell;
+  @apply bg-slate-800 text-slate-200;
 }
 
 .sg-container {

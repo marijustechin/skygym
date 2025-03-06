@@ -1,3 +1,9 @@
 {
-  "sveiki": "Lietuviškas tekstas su react-i18next"
+  "menu_home": "Pradžia",
+  "menu_prices": "Kainos",
+  "menu_toc": "Taisyklės",
+  "menu_contacts": "Kontaktai",
+  "form_title_login": "Prašome prisijungti",
+  "form_placeholder_email": "Jūsų el. pašto adresas",
+  "form_placeholder_password": "Slaptažodis"
 }

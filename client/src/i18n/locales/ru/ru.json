@@ -1,3 +1,9 @@
 {
-  "sveiki": "Rusiskas tekstas su react-i18next"
+  "menu_home": "Главная",
+  "menu_prices": "Цены",
+  "menu_toc": "Правила",
+  "menu_contacts": "Контакты",
+  "form_title_login": "Пожалуйста, войдите",
+  "form_placeholder_email": "Ваша эл. почта",
+  "form_placeholder_password": "Пароль"
 }
