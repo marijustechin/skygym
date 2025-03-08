@@ -20,5 +20,5 @@ html {
 }
 
 .form-input {
-  @apply w-full p-2 rounded-lg border border-slate-600 placeholder:text-slate-400 text-slate-300;
+  @apply w-full p-2 rounded-lg border border-slate-600 placeholder:text-slate-400 text-slate-300  autofill:transition-colors autofill:duration-[999999999s];
 }

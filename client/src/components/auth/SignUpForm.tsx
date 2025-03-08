@@ -3,8 +3,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router';
 import { RegistrationSchema } from '../../schemas/RegistrationSchema';
+import { useTranslation } from 'react-i18next';
 
-export const RegistrationForm = () => {
+export const SignUpForm = () => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -40,7 +42,7 @@ export const RegistrationForm = () => {
             className="form-input"
             type="text"
             autoComplete="on"
-            placeholder="Jūsų vardas"
+            placeholder={t('form_placeholder_name')}
             {...register('first_name')}
           />
           {errors.first_name && (
@@ -55,7 +57,7 @@ export const RegistrationForm = () => {
             className="form-input"
             type="text"
             autoComplete="on"
-            placeholder="El.pašto adresas"
+            placeholder={t('form_placeholder_email')}
             {...register('email')}
           />
           {errors.email && (
@@ -70,7 +72,7 @@ export const RegistrationForm = () => {
             className="form-input"
             type="password"
             autoComplete="on"
-            placeholder="Slaptažodis"
+            placeholder={t('form_placeholder_password')}
             {...register('password')}
           />
           {errors.password && (
@@ -80,7 +82,7 @@ export const RegistrationForm = () => {
           )}
         </div>
         <button className="btn-generic w-full text-slate-100" type="submit">
-          Prisijungti
+          {t('form_button_signup')}
         </button>
       </div>
       <div>

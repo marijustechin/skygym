@@ -3,7 +3,13 @@
   "menu_prices": "Kainos",
   "menu_toc": "Taisyklės",
   "menu_contacts": "Kontaktai",
+  "login_button": "Prisijunk",
   "form_title_login": "Prašome prisijungti",
+  "form_placeholder_name": "Jūsų vardas",
   "form_placeholder_email": "Jūsų el. pašto adresas",
-  "form_placeholder_password": "Slaptažodis"
+  "form_placeholder_password": "Slaptažodis",
+  "form_button_login": "Prisijungti",
+  "form_button_signup": "Užsiregistruoti",
+  "footer_skygym": "Sporto klubas Vilniuje",
+  "footer_all_rights": "Visos teisės ginamos"
 }

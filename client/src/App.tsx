@@ -1,19 +1,20 @@
-import { BrowserRouter, Route, Routes } from 'react-router';
-// layouts
-import { MainLayout } from './layouts/MainLayout';
-import { AdminLayout } from './layouts/AdminLayout';
-import { UserLayout } from './layouts/UserLayout';
-// pages
-import { HomePage } from './pages/HomePage';
-import { ContactPage } from './pages/ContactPage';
-import { LoginPage } from './pages/LoginPage';
-import { RegistrationPage } from './pages/RegistrationPage';
-import { TOCPage } from './pages/TOCPage';
-import { PricesPage } from './pages/PricesPage';
-import { UserHome } from './pages/user/UserHome';
-import { AdminHome } from './pages/admin/AdminHome';
 import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import { useTranslation } from 'react-i18next';
+// layouts & pages
+import { MainLayout } from './layouts/MainLayout';
+import { HomePage } from './pages/HomePage';
+import { PricesPage } from './pages/PricesPage';
+import { TOCPage } from './pages/TOCPage';
+import { ContactPage } from './pages/ContactPage';
+import { RegistrationPage } from './pages/RegistrationPage';
+import { LoginPage } from './pages/LoginPage';
+// admin
+import { AdminLayout } from './layouts/AdminLayout';
+import { AdminHome } from './pages/admin/AdminHome';
+// user
+import { UserLayout } from './layouts/UserLayout';
+import { UserHome } from './pages/user/UserHome';
 
 function App() {
   const { i18n } = useTranslation();

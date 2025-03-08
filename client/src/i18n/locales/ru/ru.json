@@ -3,7 +3,13 @@
   "menu_prices": "Цены",
   "menu_toc": "Правила",
   "menu_contacts": "Контакты",
+  "login_button": "Заходи",
   "form_title_login": "Пожалуйста, войдите",
+  "form_placeholder_name": "Ваше имя",
   "form_placeholder_email": "Ваша эл. почта",
-  "form_placeholder_password": "Пароль"
+  "form_placeholder_password": "Пароль",
+  "form_button_login": "Вход",
+  "form_button_signup": "Зарегистрироваться",
+  "footer_skygym": "Спортзал в Вильнюсе",
+  "footer_all_rights": "Все права сохранены"
 }

@@ -1,5 +1,5 @@
-import { RegistrationForm } from '../components/auth/RegistrationForm';
+import { SignUpForm } from '../components/auth/SignUpForm';
 
 export const RegistrationPage = () => {
-  return <RegistrationForm />;
+  return <SignUpForm />;
 };

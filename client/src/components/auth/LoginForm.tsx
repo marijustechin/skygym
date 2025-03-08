@@ -59,7 +59,7 @@ export const LoginForm = () => {
     <form
       noValidate
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-sm mx-auto my-4"
+      className="max-w-xs mx-auto my-4"
     >
       <h1 className="text-slate-200 text-2xl text-center">
         🔑 {t('form_title_login')}
@@ -83,7 +83,7 @@ export const LoginForm = () => {
         <div className="flex flex-col">
           <input
             id="password"
-            className="form-input autofill:transition-colors autofill:duration-[999999999s]"
+            className="form-input"
             type="password"
             autoComplete="on"
             placeholder={t('form_placeholder_password')}

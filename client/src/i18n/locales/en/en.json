@@ -3,7 +3,13 @@
   "menu_prices": "Prices",
   "menu_toc": "TOC",
   "menu_contacts": "Contacts",
+  "login_button": "Login",
   "form_title_login": "Please login",
+  "form_placeholder_name": "Your name",
   "form_placeholder_email": "Your email",
-  "form_placeholder_password": "Password"
+  "form_placeholder_password": "Password",
+  "form_button_login": "Login",
+  "form_button_signup": "Sign Up",
+  "footer_skygym": "Gym in Vilnius",
+  "footer_all_rights": "All rights reserved"
 }
