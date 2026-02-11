@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kanit:wght@600;700&display=swap');
+
+:root {
+  /* Pagrindinės spalvos iš tavo paletės */
+  --color-white: #f8fafc; /* Sky 50 */
+  --color-sky: #0ea5e9;    /* Sky 500 */
+  --color-rose: #9f1239;   /* Rose 800 */
+  --color-text: #1e293b;     /* Slate 900 (Tekstas) */
+  --color-bg: #e2e8f0;   /* Slate 200 (Fonas) */
+  
+  /* Šriftai */
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Kanit', sans-serif;
+
+  /* Pagalbinės */
+  --border-radius: 8px;
+  --transition: 0.3s ease;
+}

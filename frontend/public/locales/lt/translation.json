@@ -1,0 +1,20 @@
+{
+  "home_page": {
+    "title": "Sporto klubas Vilniuje - lankymo valandos NERIBOJAMOS!"
+  },
+
+  "contacts_page": {
+    "title": "Kontaktai"
+  },
+
+  "login_page": {
+    "title": "Prisijungti"
+  },
+
+  "menu_links": {
+    "home": "Pradžia",
+    "pricelist": "Kainoraštis",
+    "rules": "Taisyklės",
+    "contacts": "Kontaktai"
+  }
+}

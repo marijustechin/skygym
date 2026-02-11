@@ -1,0 +1,20 @@
+{
+  "home_page": {
+    "title": "Gym in Vilnius - unlimited!"
+  },
+
+  "contacts_page": {
+    "title": "Contacts"
+  },
+
+  "login_page": {
+    "title": "Login"
+  },
+
+  "menu_links": {
+    "home": "Home",
+    "pricelist": "Prices",
+    "rules": "Rules",
+    "contacts": "Contacts"
+  }
+}
