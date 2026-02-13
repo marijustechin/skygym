@@ -1,18 +1,16 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import configuration from './modules/config/configuration';
-import { envValidationSchema } from './modules/config/env.validation';
+import configuration from './config/configuration';
+import { envValidationSchema } from './config/env.validation';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
-
-const nodeEnv = process.env.NODE_ENV ?? 'development';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: [`.env.${nodeEnv}`],
+      envFilePath: ['.env'],
       load: [configuration],
       validationSchema: envValidationSchema,
       validationOptions: {
@@ -24,7 +22,7 @@ const nodeEnv = process.env.NODE_ENV ?? 'development';
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => {
-        const isProd = nodeEnv === 'production';
+        const isProd = config.getOrThrow('env') === 'production';
 
         return {
           type: 'mysql',
@@ -35,7 +33,8 @@ const nodeEnv = process.env.NODE_ENV ?? 'development';
           database: config.getOrThrow<string>('db.name'),
 
           autoLoadEntities: true,
-          synchronize: !isProd,
+          synchronize: false,
+          migrationsRun: false,
           logging: !isProd,
         };
       },
