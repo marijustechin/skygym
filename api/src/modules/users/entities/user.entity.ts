@@ -36,25 +36,37 @@ export class User {
   @Column({ type: 'varchar', length: 255, nullable: true, name: 'google_sub' })
   googleSub: string | null;
 
-  @Column({ type: 'varchar', length: 255, nullable: true, select: false })
+  @Column({
+    type: 'varchar',
+    length: 255,
+    nullable: true,
+    select: false,
+    name: 'password_hash',
+  })
   passwordHash: string | null;
 
   @Column({ type: 'enum', enum: UserRole, default: UserRole.user })
   role: UserRole;
 
-  @Column({ type: 'boolean', default: false })
+  @Column({ type: 'boolean', default: false, name: 'is_email_verified' })
   isEmailVerified: boolean;
 
-  @Column({ type: 'varchar', length: 320, nullable: true, select: false })
+  @Column({
+    type: 'varchar',
+    length: 320,
+    nullable: true,
+    select: false,
+    name: 'verification_token',
+  })
   verificationToken: string | null;
 
-  @Column({ type: 'datetime', nullable: true })
+  @Column({ type: 'datetime', nullable: true, name: 'verification_expires' })
   verificationExpires: Date | null;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
   @BeforeInsert()
