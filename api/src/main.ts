@@ -3,9 +3,12 @@ import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { setupSwagger } from './config/swagger.config';
 import { ValidationPipe } from '@nestjs/common';
+import cookieParser from 'cookie-parser';
 
 async function start() {
   const app = await NestFactory.create(AppModule);
+
+  app.use(cookieParser());
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -15,7 +18,7 @@ async function start() {
     }),
   );
 
-  app.setGlobalPrefix('api/v1');
+  app.setGlobalPrefix('v1');
 
   const config = app.get(ConfigService);
 

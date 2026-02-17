@@ -22,6 +22,11 @@ export class PasswordService {
     p: 1,
   };
 
+  /**
+   *
+   * @param password - raw password string
+   * @returns passwordHash - string
+   */
   async hashPassword(password: string): Promise<string> {
     const salt = randomBytes(this.SALT_LENGTH);
     const derivedKey = await this.scrypt(
@@ -41,6 +46,12 @@ export class PasswordService {
     ].join('$');
   }
 
+  /**
+   *
+   * @param password - user password raw
+   * @param storedHash - hashed user password from db
+   * @returns boolean - true if passwords match, else fasle
+   */
   async verifyPassword(password: string, storedHash: string): Promise<boolean> {
     const parts = storedHash.split('$');
     if (parts.length !== 6 || parts[0] !== 'scrypt') return false;
