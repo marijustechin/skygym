@@ -63,6 +63,18 @@ export class User {
   @Column({ type: 'datetime', nullable: true, name: 'verification_expires' })
   verificationExpires: Date | null;
 
+  @Column({
+    type: 'varchar',
+    length: 255,
+    nullable: true,
+    select: false,
+    name: 'refresh_token_hash',
+  })
+  refreshTokenHash: string | null;
+
+  @Column({ type: 'datetime', nullable: true, name: 'last_login' })
+  lastLogin: Date | null;
+
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
