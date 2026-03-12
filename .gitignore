@@ -41,8 +41,9 @@ pnpm-debug.log*
 .cache/
 .parcel-cache/
 
-# TypeScript
-*.tsbuildinfo
+# vercel
+.vercel
 
-# Spec
-info.txt
+# typescript
+*.tsbuildinfo
+next-env.d.ts
