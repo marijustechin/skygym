@@ -4,7 +4,7 @@
   },
 
   "contacts_page": {
-    "title": "Контакты"
+    "title": "Kontaktai"
   },
 
   "login_page": {
@@ -12,9 +12,9 @@
   },
 
   "menu_links": {
-    "home": "Главная",
-    "pricelist": "Цены",
-    "rules": "Правила",
-    "contacts": "Контакты"
+    "home": "Pradžia",
+    "pricelist": "Kainoraštis",
+    "rules": "Taisyklės",
+    "contacts": "Kontaktai"
   }
 }

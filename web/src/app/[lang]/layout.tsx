@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { supportedLanguages, Language } from '@/shared/config/index';
+import { supportedLanguages, type Language } from '@/shared/config/i18n/config';
 
 export default async function LangLayout({
   children,

@@ -1,9 +1,13 @@
-'use client';
+import { getDictionary } from '@/shared/config/i18n/get-dictionary';
+import type { Language } from '@/shared/config/i18n/config';
 
-import { useTranslation } from 'react-i18next';
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as Language);
 
-export default function Home() {
-  const { t } = useTranslation();
-
-  return <div className='text-black'>{t('home_page.title')}</div>;
+  return <div className="text-black">{dict.public.home_page.title}</div>;
 }

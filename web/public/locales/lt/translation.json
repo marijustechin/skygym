@@ -16,5 +16,9 @@
     "pricelist": "Kainoraštis",
     "rules": "Taisyklės",
     "contacts": "Kontaktai"
+  },
+
+  "registration_page":{
+    "title": "Registracija"
   }
 }
