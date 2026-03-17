@@ -1,0 +1,30 @@
+{
+  "common": {
+    "input_name_label": "Имя",
+    "input_email_label": "Ел. почта",
+    "input_password_label": "Пароль",
+    "input_confirm_password_label": "Павторите пароль",
+    "login_question": "Already registered?",
+    "login_link": "Please login",
+    "register_question": "Have no account?",
+    "register_link": "Plese register",
+    "please_wait_message": "Please wait a second..."
+  },
+  "registration": {
+    "title": "Регистрация",
+    "submit_button": "Зарегистрироватся"
+  },
+  "validation": {
+    "first_name_required": "Вы забыли указать своё имя",
+    "first_name_invalid": "Имя должно быть составлено только из букв, чисел, -, '",
+    "first_name_min": "Имя должно содержать не менее 2 символов",
+    "first_name_max": "Имя не может быть длиннее 30 символов",
+    "email_required": "Адрес электронной почты обязателен",
+    "email_invalid": "Неверный формат электронной почты",
+    "password_min_length": "Пароль должен содержать не менее 6 символов",
+    "confirm_password_required": "Пожалуиста, подтвердите пароль",
+    "passwords_do_not_match": "Пороль несовпадает",
+    "password_invalid": "Пороль должен содержат хотя бы одну букву и одну цифру",
+    "password_required": "Пароль обязателен"
+  }
+}

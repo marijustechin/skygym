@@ -1,0 +1,30 @@
+{
+  "common": {
+    "input_name_label": "Name",
+    "input_email_label": "Email",
+    "input_password_label": "Password",
+    "input_confirm_password_label": "Repeat password",
+    "login_question": "Already registered?",
+    "login_link": "Please login",
+    "register_question": "Have no account?",
+    "register_link": "Plese register",
+    "please_wait_message": "Please wait a second..."
+  },
+  "registration": {
+    "title": "Registration",
+    "submit_button": "Register"
+  },
+  "validation": {
+    "first_name_required": "You forgot to enter your first name",
+    "first_name_invalid": "First name can contain letters, numbers, ', -",
+    "first_name_min": "First name must be at least 2 characters long",
+    "first_name_max": "First name cannot be longer than 30 characters",
+    "email_required": "Email address is required",
+    "email_invalid": "Invalid email address format",
+    "password_min_length": "Password must be at least 6 characters long",
+    "confirm_password_required": "Please confirm passwrod",
+    "passwords_do_not_match": "Password do not match",
+    "password_invalid": "Password must contain at least one letter and one number",
+    "password_required": "Password is required"
+  }
+}
