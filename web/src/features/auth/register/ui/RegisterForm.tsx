@@ -10,10 +10,13 @@ import type { FormsDictionary } from '@/shared/config/i18n/dictionary';
 import {
   createRegisterSchema,
   type RegisterFormValues,
-} from '../model/schemas/registerSchema';
+} from '../model/register-schema';
 import { FormShell } from '@/shared/ui/form-shell';
 import { Field, FieldError, FieldLabel } from '@/shared/ui/field';
 import { Language } from '@/shared/config/i18n/config';
+import { registerUser } from '../api/register-user';
+import { getApiErrorCode } from '@/shared/api/get-api-error-code';
+import { getApiMessage } from '@/shared/api/get-api-message';
 
 type RegisterFormProps = {
   langStrings: FormsDictionary;
@@ -26,7 +29,7 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
     [langStrings],
   );
 
-  const { common, registration } = langStrings;
+  const { common, registration, api } = langStrings;
 
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(schema),
@@ -46,16 +49,24 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
     handleSubmit,
   } = form;
 
-  const onSubmit = (values: RegisterFormValues) => {
-    console.log(values);
+  const onSubmit = async (values: RegisterFormValues) => {
+    try {
+      const { firstName, email, password } = values;
+      const res = await registerUser({ firstName, email, password, lang });
+      const resMessage = getApiMessage(res.code, langStrings.api);
+    } catch (error) {
+      const code = getApiErrorCode(error);
+      console.log(code);
+      console.log(getApiMessage(code, langStrings.api));
+    }
   };
 
   const footer = (
-    <p className='text-sm text-muted-foreground'>
+    <p className="text-sm text-muted-foreground">
       {common.login_question}{' '}
       <Link
         href={`/${lang}/prisijungti`}
-        className='font-medium text-primary underline-offset-4 hover:underline'
+        className="font-medium text-primary underline-offset-4 hover:underline"
       >
         {common.login_link}
       </Link>
@@ -64,13 +75,14 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
 
   return (
     <FormShell headerLabel={registration.title} footer={footer}>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate className='space-y-4'>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
         <Field data-invalid={!!errors.firstName}>
-          <FieldLabel htmlFor='firstName'>{common.input_name_label}</FieldLabel>
+          <FieldLabel htmlFor="firstName">{common.input_name_label}</FieldLabel>
           <Input
-            id='firstName'
-            type='text'
-            autoComplete='given-name'
+            className="form-input"
+            id="firstName"
+            type="text"
+            autoComplete="given-name"
             aria-invalid={!!errors.firstName}
             {...register('firstName')}
           />
@@ -78,11 +90,11 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
         </Field>
 
         <Field data-invalid={!!errors.email}>
-          <FieldLabel htmlFor='email'>{common.input_email_label}</FieldLabel>
+          <FieldLabel htmlFor="email">{common.input_email_label}</FieldLabel>
           <Input
-            id='email'
-            type='email'
-            autoComplete='email'
+            id="email"
+            type="email"
+            autoComplete="email"
             aria-invalid={!!errors.email}
             {...register('email')}
           />
@@ -90,13 +102,13 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
         </Field>
 
         <Field data-invalid={!!errors.password}>
-          <FieldLabel htmlFor='password'>
+          <FieldLabel htmlFor="password">
             {common.input_password_label}
           </FieldLabel>
           <Input
-            id='password'
-            type='password'
-            autoComplete='new-password'
+            id="password"
+            type="password"
+            autoComplete="new-password"
             aria-invalid={!!errors.password}
             {...register('password')}
           />
@@ -104,13 +116,13 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
         </Field>
 
         <Field data-invalid={!!errors.confirmPassword}>
-          <FieldLabel htmlFor='confirmPassword'>
+          <FieldLabel htmlFor="confirmPassword">
             {common.input_confirm_password_label}
           </FieldLabel>
           <Input
-            id='confirmPassword'
-            type='password'
-            autoComplete='new-password'
+            id="confirmPassword"
+            type="password"
+            autoComplete="new-password"
             aria-invalid={!!errors.confirmPassword}
             {...register('confirmPassword')}
           />
@@ -118,8 +130,8 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
         </Field>
 
         <Button
-          type='submit'
-          className='w-full'
+          type="submit"
+          className="w-full"
           disabled={form.formState.isSubmitting}
         >
           {form.formState.isSubmitting

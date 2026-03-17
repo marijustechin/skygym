@@ -26,5 +26,10 @@
     "passwords_do_not_match": "Slaptažodžis nesutampa",
     "password_invalid": "Slaptažodyje turi būti bent viena raidė ir vienas skaičius",
     "password_required": "Slaptažodis privalomas"
+  },
+  "api": {
+    "USER_REGISTRATION_EMAIL_IN_USE": "Šis el. pašto adresas jau naudojamas",
+    "REGISTRATION_SUCCESSFUL": "Registracija sėkminga. Patikrinkite savo el. paštą ir patvirtinkite adresą",
+    "UNKNOWN_ERROR": "Kažkas nepavyko. Bandykite dar kartą vėliau."
   }
 }

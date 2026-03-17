@@ -126,4 +126,7 @@
   html {
     @apply font-sans;
   }
+  .form-input {
+    @apply autofill:transition-colors autofill:duration-[999999999s]
+  }
 }

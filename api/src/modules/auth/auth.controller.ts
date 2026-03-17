@@ -75,7 +75,8 @@ export class AuthController {
     schema: {
       type: 'object',
       properties: {
-        message: { type: 'string', example: 'USER_REGISTRATION_SUCCESSFUL' },
+        success: { type: 'boolean', example: true },
+        code: { type: 'string', example: 'USER_REGISTRATION_SUCCESSFUL' },
       },
     },
   })

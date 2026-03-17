@@ -4,6 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { setupSwagger } from './config/swagger.config';
 import { ValidationPipe } from '@nestjs/common';
 import cookieParser from 'cookie-parser';
+import { type AppConfig } from './config/configuration';
 
 async function start() {
   const app = await NestFactory.create(AppModule);
@@ -20,19 +21,17 @@ async function start() {
 
   app.setGlobalPrefix('v1');
 
-  const config = app.get(ConfigService);
+  const config = app.get<ConfigService<AppConfig>>(ConfigService);
 
-  const origins = config.get<string[]>('cors.origins') ?? [];
-  if (origins.length) {
-    app.enableCors({
-      origin: origins,
-      credentials: true,
-    });
-  }
+  const corsConfig = config.getOrThrow<AppConfig['cors']>('cors');
+  const origins = corsConfig.origins;
+  app.enableCors({
+    origin: origins,
+    credentials: true,
+  });
 
-  const env = config.get<string>('env') ?? 'development';
-  const swaggerEnabled =
-    config.get<boolean>('swagger.enabled') ?? env !== 'production';
+  const swaggerConfig = config.getOrThrow<AppConfig['swagger']>('swagger');
+  const swaggerEnabled = swaggerConfig.enabled;
 
   if (swaggerEnabled) {
     setupSwagger(app);

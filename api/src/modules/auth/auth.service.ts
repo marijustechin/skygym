@@ -96,7 +96,6 @@ export class AuthService {
         user.email,
         user.firstName,
         verificationTokenRaw,
-        dto.langCode,
       );
     } catch (error) {
       console.error('Nepavyko išsiųsti laiško:', error);
@@ -104,8 +103,9 @@ export class AuthService {
 
     // dėl testavimo, siunčiu sau papildomai verificationTokenRaw
     return {
-      message: 'USER_REGISTRATION_SUCCESSFUL',
-      tokenForTestVerification: verificationTokenRaw,
+      success: true,
+      code: 'USER_REGISTRATION_SUCCESSFUL',
+      //tokenForTestVerification: verificationTokenRaw,
     };
   }
 
