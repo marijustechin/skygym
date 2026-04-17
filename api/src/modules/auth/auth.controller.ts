@@ -47,7 +47,8 @@ export class AuthController {
     schema: {
       type: 'object',
       properties: {
-        message: { type: 'string', example: 'USER_REGISTRATION_EMAIL_IN_USE' },
+        success: { type: 'boolean', example: false },
+        code: { type: 'string', example: 'USER_REGISTRATION_EMAIL_IN_USE' },
       },
     },
   })
@@ -56,8 +57,9 @@ export class AuthController {
     schema: {
       type: 'object',
       properties: {
-        statusCode: { type: 'number', example: 400 },
-        message: {
+        success: { type: 'boolean', example: true },
+        code: { type: 'string', example: 'VALIDATION_FAILED' },
+        details: {
           type: 'array',
           items: { type: 'string' },
           example: [
