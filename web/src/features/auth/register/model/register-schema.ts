@@ -10,8 +10,8 @@ export const createRegisterSchema = (langStrings: FormsDictionary) => {
         .string()
         .trim()
         .min(1, { error: validation.first_name_required })
-        .min(2, { error: validation.first_name_min })
-        .max(30, { error: validation.first_name_max })
+        .min(2, { error: validation.first_name_min_length })
+        .max(30, { error: validation.first_name_max_length })
         .regex(/^[\p{L}]+(?:['-][\p{L}]+)*$/u, {
           error: validation.first_name_invalid,
         }),
@@ -20,20 +20,20 @@ export const createRegisterSchema = (langStrings: FormsDictionary) => {
         .string()
         .trim()
         .min(1, { error: validation.email_required })
+        .max(254, { error: validation.email_max_length })
         .email({ error: validation.email_invalid }),
 
       password: z
         .string()
-        .trim()
         .min(1, { error: validation.password_required })
-        .min(6, { error: validation.password_min_length })
+        .min(8, { error: validation.password_min_length })
+        .max(72, { error: validation.password_max_length })
         .regex(/^(?=.*[A-Za-z])(?=.*\d).+$/, {
           error: validation.password_invalid,
         }),
 
       confirmPassword: z
         .string()
-        .trim()
         .min(1, { error: validation.confirm_password_required }),
     })
     .refine((data) => data.password === data.confirmPassword, {

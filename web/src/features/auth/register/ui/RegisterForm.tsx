@@ -17,6 +17,7 @@ import { Language } from '@/shared/config/i18n/config';
 import { registerUser } from '../api/register-user';
 import { getApiErrorCode } from '@/shared/api/get-api-error-code';
 import { getApiMessage } from '@/shared/api/get-api-message';
+import { useRouter } from 'next/navigation';
 
 type RegisterFormProps = {
   langStrings: FormsDictionary;
@@ -28,6 +29,8 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
     () => createRegisterSchema(langStrings),
     [langStrings],
   );
+
+  const router = useRouter();
 
   const { common, registration, api } = langStrings;
 
@@ -52,12 +55,29 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
   const onSubmit = async (values: RegisterFormValues) => {
     try {
       const { firstName, email, password } = values;
-      const res = await registerUser({ firstName, email, password, lang });
-      const resMessage = getApiMessage(res.code, langStrings.api);
+
+      const res = await registerUser({
+        firstName,
+        email,
+        password,
+        lang,
+      });
+
+      if (res.code === 'USER_REGISTRATION_SUCCESSFUL') {
+        sessionStorage.setItem('registrationSuccess', '1');
+        router.push(`/${lang}/registracija/pasto-patvirtinimas`);
+
+        return;
+      }
+
+      console.warn('Unexpected success response code:', res.code);
     } catch (error) {
       const code = getApiErrorCode(error);
-      console.log(code);
-      console.log(getApiMessage(code, langStrings.api));
+      if (code === 'MISSING_RESPONSE_CODE') {
+        console.warn('API response missing code!');
+      } else {
+        console.log(getApiMessage(code, api));
+      }
     }
   };
 

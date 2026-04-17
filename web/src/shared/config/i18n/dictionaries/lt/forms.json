@@ -17,10 +17,12 @@
   "validation": {
     "first_name_required": "Pamiršote įrašyti savo vardą",
     "first_name_invalid": "Vardą gali sudaryti raidės, skaičiai, ', -",
-    "first_name_min": "Vardas negali būti trumpesnis kaip 2 simboliai",
-    "first_name_max": "Vardas negali būti ilgesnis kaip 30 simbolių",
+    "first_name_min_length": "Vardas negali būti trumpesnis kaip 2 simboliai",
+    "first_name_max_length": "Vardas negali būti ilgesnis kaip 30 simbolių",
     "email_required": "El. pašto adresas privalomas",
     "email_invalid": "Neteisingas el. pašto adreso formatas",
+    "email_max_length": "El. paštas per ilgas",
+    "password_max_length": "Slaptažodis per ilgas",
     "password_min_length": "Slaptažodis turi būti ne trumpesnis kaip 6 simboliai",
     "confirm_password_required": "Prašome patvirtinti slaptažodį",
     "passwords_do_not_match": "Slaptažodžis nesutampa",
@@ -29,7 +31,8 @@
   },
   "api": {
     "USER_REGISTRATION_EMAIL_IN_USE": "Šis el. pašto adresas jau naudojamas",
-    "REGISTRATION_SUCCESSFUL": "Registracija sėkminga. Patikrinkite savo el. paštą ir patvirtinkite adresą",
+    "USER_REGISTRATION_SUCCESSFUL": "Registracija sėkminga. Patikrinkite savo el. paštą ir patvirtinkite adresą",
+    "VALIDATION_FAILED": "Pateikti neteisingi duomenys. Prašome patikrinti formą ir mėginti dar kartą.",
     "UNKNOWN_ERROR": "Kažkas nepavyko. Bandykite dar kartą vėliau."
   }
 }

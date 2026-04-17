@@ -17,10 +17,12 @@
   "validation": {
     "first_name_required": "You forgot to enter your first name",
     "first_name_invalid": "First name can contain letters, numbers, apostrophes, and hyphens",
-    "first_name_min": "First name must be at least 2 characters long",
-    "first_name_max": "First name cannot be longer than 30 characters",
+    "first_name_min_length": "First name must be at least 2 characters long",
+    "first_name_max_length": "First name cannot be longer than 30 characters",
     "email_required": "Email address is required",
     "email_invalid": "Invalid email address format",
+    "email_max_length": "Email is too long",
+    "password_max_length": "Password is too long",
     "password_min_length": "Password must be at least 6 characters long",
     "confirm_password_required": "Please confirm your password",
     "passwords_do_not_match": "Passwords do not match",
@@ -29,7 +31,8 @@
   },
   "api": {
     "USER_REGISTRATION_EMAIL_IN_USE": "This email is already in use",
-    "REGISTRATION_SUCCESSFUL": "Registration successful. Please check your email and confirm your email address",
+    "USER_REGISTRATION_SUCCESSFUL": "Registration successful. Please check your email and confirm your email address",
+    "VALIDATION_FAILED": "Invalid data provided. Please review the form and try again.",
     "UNKNOWN_ERROR": "Something went wrong. Please try again later."
   }
 }

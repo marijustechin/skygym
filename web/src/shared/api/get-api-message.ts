@@ -1,12 +1,9 @@
 import type { FormsDictionary } from '../config/i18n/dictionary';
 
 export const getApiMessage = (
-  code: string,
+  code: keyof FormsDictionary['api'] | string,
   messages: FormsDictionary['api'],
 ): string => {
-  if (messages[code]) {
-    return messages[code];
-  } else {
-    return messages['UNKNOWN_ERROR'];
-  }
+  const message = messages[code as keyof FormsDictionary['api']];
+  return message || messages['UNKNOWN_ERROR'];
 };
