@@ -1,6 +1,5 @@
 import {
   BadRequestException,
-  ConflictException,
   HttpException,
   HttpStatus,
   Injectable,
@@ -18,6 +17,8 @@ import { ActiveUserData } from './interfaces/active-user-data.interface';
 import { ConfigService } from '@nestjs/config';
 import { StringValue } from 'ms';
 import { User } from '../users/entities/user.entity';
+import { UserRegistrationEmailInUseException } from './exceptions/user-registration-email-in-use.exception';
+import { ApiSuccessResponse } from 'src/common/api/types/api-response.types';
 
 @Injectable()
 export class AuthService {
@@ -63,14 +64,13 @@ export class AuthService {
    * @param dto: {firstName, email, password}
    * @returns
    */
-  async register(dto: AuthRegisterDto) {
+  async register(dto: AuthRegisterDto): Promise<ApiSuccessResponse> {
     const email = dto.email.toLowerCase().trim();
     const firstName = dto.firstName.trim();
 
     const existingUser = await this.userService.findByEmail(email);
 
-    if (existingUser)
-      throw new ConflictException('USER_REGISTRATION_EMAIL_IN_USE');
+    if (existingUser) throw new UserRegistrationEmailInUseException();
 
     const passwordHash = await this.passwordService.hashPassword(dto.password);
 
@@ -96,16 +96,15 @@ export class AuthService {
         user.email,
         user.firstName,
         verificationTokenRaw,
-        dto.langCode,
       );
     } catch (error) {
       console.error('Nepavyko išsiųsti laiško:', error);
     }
 
-    // dėl testavimo, siunčiu sau papildomai verificationTokenRaw
     return {
-      message: 'USER_REGISTRATION_SUCCESSFUL',
-      tokenForTestVerification: verificationTokenRaw,
+      success: true,
+      code: 'USER_REGISTRATION_SUCCESSFUL',
+      //tokenForTestVerification: verificationTokenRaw,
     };
   }
 

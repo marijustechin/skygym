@@ -8,7 +8,6 @@ export class MailService {
     userEmail: string,
     userName: string,
     verificationTokenRaw: string,
-    langCode: string,
   ) {
     console.log(verificationTokenRaw);
   }

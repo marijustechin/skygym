@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import configuration from './config/configuration';
+import { appConfig } from './config/configuration';
 import { envValidationSchema } from './config/env.validation';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
@@ -15,7 +15,7 @@ import { join } from 'path';
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: ['.env'],
-      load: [configuration],
+      load: [appConfig],
       validationSchema: envValidationSchema,
       validationOptions: {
         abortEarly: false,

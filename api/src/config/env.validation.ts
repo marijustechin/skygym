@@ -8,9 +8,7 @@ export const envValidationSchema = Joi.object({
   PORT: Joi.number().integer().positive().default(3003),
 
   // CORS
-  // leidžiam tuščią (pvz. jei CORS išvis nereikalingas),
-  // bet jei įrašyta — turi būti tvarkingas stringas
-  CORS_ORIGINS: Joi.string().allow('').default(''),
+  CORS_ORIGINS: Joi.string().trim().required(),
 
   // Swagger toggle
   SWAGGER_ENABLED: Joi.boolean().truthy('true').falsy('false').default(false),

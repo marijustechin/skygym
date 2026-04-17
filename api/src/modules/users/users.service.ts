@@ -76,4 +76,8 @@ export class UsersService {
     // nes išsaugojame visą esybę, o ne darome paprastą SQL UPDATE)
     return this.usersRepo.save(user);
   }
+
+  async getAll() {
+    return this.usersRepo.find();
+  }
 }

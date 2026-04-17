@@ -1,6 +1,23 @@
-export default () => ({
-  env: process.env.NODE_ENV,
+const parseEnvArray = (value?: string): string[] => {
+  if (!value) return [];
+
+  return value
+    .split(',')
+    .map((v) => v.trim())
+    .filter(Boolean);
+};
+
+export const appConfig = () => ({
+  env: process.env.NODE_ENV ?? 'development',
   port: Number(process.env.PORT ?? 3003),
+
+  cors: {
+    origins: parseEnvArray(process.env.CORS_ORIGINS),
+  },
+
+  swagger: {
+    enabled: process.env.SWAGGER_ENABLED,
+  },
 
   db: {
     host: process.env.DB_HOST,
@@ -26,3 +43,5 @@ export default () => ({
     secure: process.env.MAIL_SECURE,
   },
 });
+
+export type AppConfig = ReturnType<typeof appConfig>;
