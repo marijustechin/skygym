@@ -3,6 +3,14 @@
     "title": "Gym in Vilnius - unlimited!"
   },
 
+  "pricelist_page": {
+    "title": "Pricelist page title"
+  },
+
+  "rules_page": {
+    "title": "Rules page title"
+  },
+
   "contacts_page": {
     "title": "Contacts"
   },
