@@ -1,6 +1,8 @@
 {
   "home_page": {
-    "title": "Sporto klubas Vilniuje - lankymo valandos NERIBOJAMOS!"
+    "title": "Sporto klubas Vilniuje",
+    "subTitle": "Lankymo valandos",
+    "subTitleSpan": "NERIBOJAMOS"
   },
 
   "pricelist_page": {
@@ -8,7 +10,7 @@
   },
 
   "rules_page": {
-    "title": "Taisykles cia bus"
+    "title": "Sport klubo taisyklės"
   },
 
   "contacts_page": {
@@ -19,10 +21,28 @@
     "title": "Prisijungti"
   },
 
+  "common": {
+    "selectLangTitle": "Pasirinkite kalbą"
+  },
+
   "menu_links": {
     "home": "Pradžia",
     "pricelist": "Kainoraštis",
     "rules": "Taisyklės",
     "contacts": "Kontaktai"
+  },
+
+  "footer": {
+    "description": "Tavo jėga prasideda čia. Moderni įranga, profesionalūs treneriai ir draugiška atmosfera.",
+    "hours_title": "Darbo laikas",
+    "hours_weekdays": "Pir–Pen: 6:00 – 23:00",
+    "hours_weekends": "Šeš–Sek: 8:00 – 22:00",
+    "navigation_title": "Meniu",
+    "contacts_title": "Kontaktai",
+    "address": "Ateities 10, Vilnius",
+    "phone": "+370 637 77753",
+    "email": "info@skygym.lt",
+    "copyright": "© {year} SkyGym",
+    "link_to_home": "Sporto klubas Vilniuje"
   }
 }

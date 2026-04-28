@@ -8,5 +8,5 @@ type LanguageFlagProps = {
 const getFlagSrc = (lang: string) => `/assets/icons/flags/${lang}.svg`;
 
 export const LanguageFlag = ({ lang }: LanguageFlagProps) => {
-  return <Image src={getFlagSrc(lang)} alt={lang} width={24} height={24} />;
+  return <Image src={getFlagSrc(lang)} alt={lang} width={30} height={30} />;
 };

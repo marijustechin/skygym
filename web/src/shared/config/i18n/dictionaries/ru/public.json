@@ -1,6 +1,8 @@
 {
   "home_page": {
-    "title": "Спортивный клуб в Вильнюсе - часы посещения НЕ ОГРАНИЧЕНЫ!"
+    "title": "Спортивный клуб в Вильнюсе",
+    "subTitle": "Часы посещения",
+    "subTitleSpan": "НЕ ОГРАНИЧЕНЫ"
   },
 
   "pricelist_page": {
@@ -19,10 +21,28 @@
     "title": "Prisijungti"
   },
 
+  "common": {
+    "selectLangTitle": "Выберите язык"
+  },
+
   "menu_links": {
     "home": "Главная",
     "pricelist": "Цены",
     "rules": "Правила",
     "contacts": "Контакты"
+  },
+
+  "footer": {
+    "description": "Твоя сила начинается здесь. Современное оборудование, профессиональные тренеры и дружеская атмосфера.",
+    "hours_title": "Часы работы",
+    "hours_weekdays": "Пн–Пт: 6:00 – 23:00",
+    "hours_weekends": "Сб–Вс: 8:00 – 22:00",
+    "navigation_title": "Меню",
+    "contacts_title": "Контакты",
+    "address": "Ateities 10, Vilnius",
+    "phone": "+370 637 77753",
+    "email": "info@skygym.lt",
+    "copyright": "© {year} SkyGym",
+    "link_to_home": "Спортивный клуб в Вильнюсе"
   }
 }

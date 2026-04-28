@@ -1,6 +1,8 @@
 {
   "home_page": {
-    "title": "Gym in Vilnius - unlimited!"
+    "title": "Gym in Vilnius",
+    "subTitle": "Gym access is",
+    "subTitleSpan": "UNLIMITED"
   },
 
   "pricelist_page": {
@@ -19,10 +21,28 @@
     "title": "Login"
   },
 
+  "common": {
+    "selectLangTitle": "Select language"
+  },
+
   "menu_links": {
     "home": "Home",
     "pricelist": "Prices",
     "rules": "Rules",
     "contacts": "Contacts"
+  },
+
+  "footer": {
+    "description": "Your strength starts here. Modern gym equipment, expert trainers, and unbeatable atmosphere.",
+    "hours_title": "Working Hours",
+    "hours_weekdays": "Mon–Fri: 6 AM – 11 PM",
+    "hours_weekends": "Sat–Sun: 8 AM – 10 PM",
+    "navigation_title": "Menu",
+    "contacts_title": "Contacts",
+    "address": "Ateities 10, Vilnius",
+    "phone": "+370 637 77753",
+    "email": "info@skygym.lt",
+    "copyright": "© {year} SkyGym",
+    "link_to_home": "Gym in Vilnius"
   }
 }

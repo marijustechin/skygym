@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Language } from '@/shared/config/i18n/config';
 import { getDictionary } from '@/shared/config/i18n/get-dictionary';
 import { EmailVerificationGate } from './ui/EmailVerificationGate';
@@ -12,5 +13,9 @@ export default async function VerifyEmailPage({
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
-  return <EmailVerificationGate lang={lang} dict={dict.forms} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EmailVerificationGate lang={lang} dict={dict.forms} />
+    </Suspense>
+  );
 }
