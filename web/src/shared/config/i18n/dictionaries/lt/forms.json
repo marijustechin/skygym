@@ -6,9 +6,14 @@
     "input_confirm_password_label": "Pakartokite slaptažodį",
     "login_question": "Jau esate užsiregistravęs?",
     "login_link": "Prašome prisijungti",
+    "login_button": "Prisijungti",
     "register_question": "Pirmas kartas?",
     "register_link": "Prašome užsiregistruoti",
     "please_wait_message": "Prašome palaukti sekundėlę..."
+  },
+  "login": {
+    "title": "Prisijungimas",
+    "submit_button": "Prisijungti"
   },
   "registration": {
     "title": "Registracija",
@@ -33,6 +38,10 @@
     "USER_REGISTRATION_EMAIL_IN_USE": "Šis el. pašto adresas jau naudojamas",
     "USER_REGISTRATION_SUCCESSFUL": "Registracija sėkminga. Patikrinkite savo el. paštą ir patvirtinkite adresą",
     "VALIDATION_FAILED": "Pateikti neteisingi duomenys. Prašome patikrinti formą ir mėginti dar kartą.",
+    "EMAIL_VERIFICATION_TOKEN_NOT_EXISTS": "Email verification token does not exists",
+    "EMAIL_VERIFICATION_TOKEN_EXPIRED": "Email verification token expired",
+    "EMAIL_VERIFICATION_SUCCESSFUL": "Your email verified successfully. Please login",
+    "EMAIL_VERIFICATION_TOKEN_INVALID": "Neteisingas duomenų formatas. Ką darom?",
     "UNKNOWN_ERROR": "Kažkas nepavyko. Bandykite dar kartą vėliau."
   }
 }

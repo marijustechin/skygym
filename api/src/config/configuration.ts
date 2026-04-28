@@ -11,6 +11,10 @@ export const appConfig = () => ({
   env: process.env.NODE_ENV ?? 'development',
   port: Number(process.env.PORT ?? 3003),
 
+  app: {
+    frontendUrl: process.env.FRONTEND_URL,
+  },
+
   cors: {
     origins: parseEnvArray(process.env.CORS_ORIGINS),
   },

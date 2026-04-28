@@ -85,7 +85,7 @@ export const RegisterForm = ({ langStrings, lang }: RegisterFormProps) => {
     <p className="text-sm text-muted-foreground">
       {common.login_question}{' '}
       <Link
-        href={`/${lang}/prisijungti`}
+        href={`/${lang}/prisijungimas`}
         className="font-medium text-primary underline-offset-4 hover:underline"
       >
         {common.login_link}
