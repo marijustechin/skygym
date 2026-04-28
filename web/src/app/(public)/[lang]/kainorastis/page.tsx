@@ -9,5 +9,9 @@ export default async function PriceList({
   const { lang } = await params;
   const dict = await getDictionary(lang as Language);
 
-  return <div className="text-black">{dict.public.pricelist_page.title}</div>;
+  return (
+    <>
+      <h1>{dict.public.pricelist_page.title}</h1>
+    </>
+  );
 }

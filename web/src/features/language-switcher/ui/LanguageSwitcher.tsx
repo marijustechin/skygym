@@ -3,19 +3,16 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { supportedLanguages, type Language } from '@/shared/config/i18n/config';
 import { setLanguage } from '@/features/language-switcher/model/set-language';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/shared/ui/dropdown-menu';
-import { Button } from '@/shared/ui/button';
-import { ChevronDown } from 'lucide-react';
 import { LanguageFlag } from './LanguageFlag';
+import { useEffect, useRef, useState } from 'react';
 
 export const LanguageSwitcher = () => {
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
   const pathname = usePathname();
   const router = useRouter();
+
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const currentLang = (pathname.split('/')[1] as Language) || 'lt';
 
@@ -31,29 +28,50 @@ export const LanguageSwitcher = () => {
     await setLanguage(language);
     router.push(newPath);
     router.refresh();
+    setIsLangMenuOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsLangMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2 px-2">
-          <LanguageFlag lang={currentLang} />
-          <span className="uppercase">{currentLang}</span>
-          <ChevronDown className="size-4 opacity-50" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[120px]">
-        {supportedLanguages.map((lang) => (
-          <DropdownMenuItem
-            key={lang}
-            onClick={() => handleLanguageChange(lang)}
-            className="flex cursor-pointer items-center gap-3"
-          >
-            <LanguageFlag lang={lang} />
-            <span className="flex-1 uppercase">{lang}</span>
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div ref={menuRef} className="hidden md:flex relative z-50">
+      <button
+        className="flex items-center cursor-pointer"
+        aria-label={isLangMenuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isLangMenuOpen}
+        onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+      >
+        <LanguageFlag lang={currentLang} />
+      </button>
+
+      {isLangMenuOpen && (
+        <div className="absolute top-full right-0 min-w-32 mt-2 z-40 p-4 rounded-lg shadow-xl bg-slate-950 border border-slate-800">
+          <ul>
+            {supportedLanguages.map((lang) => (
+              <li
+                key={lang}
+                onClick={() => handleLanguageChange(lang)}
+                className="flex cursor-pointer items-center hover:bg-slate-800 justify-center gap-3 p-2 rounded-lg"
+              >
+                <LanguageFlag lang={lang} />
+                <span className="uppercase text-slate-200">{lang}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
   );
 };

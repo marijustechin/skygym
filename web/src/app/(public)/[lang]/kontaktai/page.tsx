@@ -9,5 +9,9 @@ export default async function Contacts({
   const { lang } = await params;
   const dict = await getDictionary(lang as Language);
 
-  return <div className="text-black">{dict.public.contacts_page.title}</div>;
+  return (
+    <>
+      <h1>{dict.public.contacts_page.title}</h1>
+    </>
+  );
 }
