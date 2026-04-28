@@ -6,9 +6,14 @@
     "input_confirm_password_label": "Павторите пароль",
     "login_question": "Already registered?",
     "login_link": "Please login",
+    "login_button": "Зайти",
     "register_question": "Have no account?",
     "register_link": "Plese register",
     "please_wait_message": "Please wait a second..."
+  },
+  "login": {
+    "title": "Регистрация",
+    "submit_button": "Зарегистрироватся"
   },
   "registration": {
     "title": "Регистрация",
@@ -33,6 +38,10 @@
     "USER_REGISTRATION_EMAIL_IN_USE": "Этот адрес электронной почты уже используется",
     "USER_REGISTRATION_SUCCESSFUL": "Регистрация прошла успешно. Пожалуйста, проверьте почту и подтвердите свой адрес",
     "VALIDATION_FAILED": "Переданы некорректные данные. Проверьте форму и попробуйте снова.",
+    "EMAIL_VERIFICATION_TOKEN_NOT_EXISTS": "Email verification token does not exists",
+    "EMAIL_VERIFICATION_TOKEN_EXPIRED": "Email verification token expired",
+    "EMAIL_VERIFICATION_SUCCESSFUL": "Your email verified successfully. Please login",
+    "EMAIL_VERIFICATION_TOKEN_INVALID": "Neteisingas duomenų formatas. Ką darom?",
     "UNKNOWN_ERROR": "Что-то пошло не так. Пожалуйста, попробуйте позже."
   }
 }

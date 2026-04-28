@@ -96,6 +96,7 @@ export class AuthService {
         user.email,
         user.firstName,
         verificationTokenRaw,
+        dto.lang,
       );
     } catch (error) {
       console.error('Nepavyko išsiųsti laiško:', error);
@@ -104,7 +105,6 @@ export class AuthService {
     return {
       success: true,
       code: 'USER_REGISTRATION_SUCCESSFUL',
-      //tokenForTestVerification: verificationTokenRaw,
     };
   }
 
@@ -156,10 +156,11 @@ export class AuthService {
       verificationTokenHash,
     );
 
-    if (!user) throw new BadRequestException('VERIFICATION_TOKEN_INVALID');
+    if (!user)
+      throw new BadRequestException('EMAIL_VERIFICATION_TOKEN_NOT_EXISTS');
 
     if (user.verificationExpires && new Date() > user.verificationExpires)
-      throw new BadRequestException('VERIFICATION_TOKEN_EXPIRED');
+      throw new BadRequestException('EMAIL_VERIFICATION_TOKEN_EXPIRED');
 
     await this.userService.update(user.id, {
       isEmailVerified: true,
@@ -167,7 +168,7 @@ export class AuthService {
       verificationExpires: null,
     });
 
-    return { message: 'EMAIL_VERIFICATION_SUCCESSFUL' };
+    return { success: true, code: 'EMAIL_VERIFICATION_SUCCESSFUL' };
   }
 
   async refresh(refreshToken: string) {

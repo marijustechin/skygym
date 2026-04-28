@@ -1,8 +1,8 @@
-import { RegisterForm } from '@/features/auth/register';
+import { LoginForm } from '@/features/auth/login';
 import { Language } from '@/shared/config/i18n/config';
 import { getDictionary } from '@/shared/config/i18n/get-dictionary';
 
-export default async function RegistrationPage({
+export default async function LoginPage({
   params,
 }: {
   params: Promise<{ lang: string }>;
@@ -12,8 +12,8 @@ export default async function RegistrationPage({
 
   return (
     <>
-      <h1>Registracijos forma</h1>
-      <RegisterForm langStrings={dict.forms} lang={lang as Language} />
+      <h1>Prisijungimo forma</h1>
+      <LoginForm langStrings={dict.forms} lang={lang as Language} />
     </>
   );
 }

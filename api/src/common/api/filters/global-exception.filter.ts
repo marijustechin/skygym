@@ -8,42 +8,41 @@ import {
 } from '@nestjs/common';
 import type { Request, Response } from 'express';
 
+type StandardErrorResponse = {
+  success: false;
+  code: string;
+  details?: unknown;
+};
+
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter {
   private readonly logger = new Logger(GlobalExceptionFilter.name);
 
   catch(exception: unknown, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
-    const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
+    const response = ctx.getResponse<Response>();
 
-    if (exception instanceof HttpException) {
-      const status = exception.getStatus();
-      const exceptionResponse = exception.getResponse();
-
-      if (this.isStandardErrorResponse(exceptionResponse)) {
-        response.status(status).json(exceptionResponse);
-        return;
-      }
-
-      if (status >= 500) {
-        this.logger.error(
-          `HttpException ${status} at ${request.method} ${request.url} - ${JSON.stringify(exceptionResponse)}`,
-        );
-      } else {
-        this.logger.warn(
-          `HttpException ${status} at ${request.method} ${request.url} - ${JSON.stringify(exceptionResponse)}`,
-        );
-      }
-
-      response.status(status).json({
-        success: false,
-        code: this.mapHttpStatusToCode(status),
-      });
-
+    if (!(exception instanceof HttpException)) {
+      this.handleUnknownException(exception, request, response);
       return;
     }
 
+    const status = exception.getStatus();
+    const rawResponse = exception.getResponse();
+
+    this.logHttpException(status, request, rawResponse);
+
+    const payload = this.normalizeHttpException(status, rawResponse);
+
+    response.status(status).json(payload);
+  }
+
+  private handleUnknownException(
+    exception: unknown,
+    request: Request,
+    response: Response,
+  ): void {
     this.logger.error(
       `Unhandled exception at ${request.method} ${request.url}`,
       exception instanceof Error ? exception.stack : String(exception),
@@ -55,18 +54,79 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     });
   }
 
+  private logHttpException(
+    status: number,
+    request: Request,
+    rawResponse: unknown,
+  ): void {
+    const message = `HttpException ${status} at ${request.method} ${request.url} - ${JSON.stringify(rawResponse)}`;
+
+    if (status >= 500) {
+      this.logger.error(message);
+      return;
+    }
+
+    this.logger.warn(message);
+  }
+
+  private normalizeHttpException(
+    status: number,
+    rawResponse: unknown,
+  ): StandardErrorResponse {
+    // 1. already normalized
+    if (this.isStandardErrorResponse(rawResponse)) {
+      return rawResponse;
+    }
+
+    // 2. string response
+    if (typeof rawResponse === 'string') {
+      return {
+        success: false,
+        code: rawResponse,
+      };
+    }
+
+    // 3. object with message
+    if (typeof rawResponse === 'object' && rawResponse !== null) {
+      const message = (rawResponse as { message?: unknown }).message;
+
+      if (typeof message === 'string') {
+        return {
+          success: false,
+          code: message,
+        };
+      }
+
+      if (Array.isArray(message)) {
+        return {
+          success: false,
+          code: 'VALIDATION_FAILED',
+          details: message,
+        };
+      }
+    }
+
+    // 4. fallback
+    return {
+      success: false,
+      code: this.mapHttpStatusToCode(status),
+    };
+  }
+
   private isStandardErrorResponse(
     value: unknown,
-  ): value is { success: boolean; code: string } {
+  ): value is StandardErrorResponse {
     if (typeof value !== 'object' || value === null) return false;
 
     return (
-      'success' in value && 'code' in value && typeof value.code === 'string'
+      'success' in value &&
+      'code' in value &&
+      typeof (value as { code: unknown }).code === 'string'
     );
   }
 
   private mapHttpStatusToCode(status: number): string {
-    const statusCodeMap: Record<number, string> = {
+    const map: Record<number, string> = {
       400: 'BAD_REQUEST',
       401: 'UNAUTHORIZED',
       403: 'FORBIDDEN',
@@ -76,9 +136,6 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       429: 'TOO_MANY_REQUESTS',
     };
 
-    return (
-      statusCodeMap[status] ??
-      (status >= 500 ? 'INTERNAL_SERVER_ERROR' : 'HTTP_EXCEPTION')
-    );
+    return map[status] ?? 'HTTP_EXCEPTION';
   }
 }

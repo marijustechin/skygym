@@ -26,8 +26,12 @@ export default async function LangLayout({ children, params }: LayoutProps) {
 
   return (
     <>
-      <Header lang={language} dict={dict.public.menu_links} />
-      {children}
+      <Header
+        lang={language}
+        dict={dict.public.menu_links}
+        loginButtonText={dict.forms.common.login_button}
+      />
+      <main className="container mx-auto">{children}</main>
       <Footer />
     </>
   );
