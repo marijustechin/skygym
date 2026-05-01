@@ -3,7 +3,7 @@ import { Language } from '@/shared/config/i18n/config';
 import { Dictionary } from '@/shared/config/i18n/dictionary';
 import { getRoutePath } from '@/shared/config/routes';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import logo from '../../../../public/assets/skygym-logo-250x667.webp';
+import logo from '../../../../public/assets/skygym-logo-baltas.webp';
 import Image from 'next/image';
 
 interface FooterProps {

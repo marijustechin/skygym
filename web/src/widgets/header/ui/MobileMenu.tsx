@@ -59,7 +59,7 @@ export const MobileMenu = ({ dict, lang }: MobileMenuProps) => {
             'min-w-full min-h-dvh bg-slate-950 text-slate-200 p-4',
           )}
         >
-          <nav className="w-full flex flex-col items-center gap-4">
+          <nav className="w-full flex pt-16 flex-col items-center gap-4">
             {navigation.map((item) => {
               const isActive = pathname === item.href + '/';
               return (

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Dictionary } from '@/shared/config/i18n/dictionary';
 import { Language } from '@/shared/config/i18n/config';
 import { LanguageSwitcher } from '@/features/language-switcher/ui/LanguageSwitcher';
-import Logo from '../../../../public/assets/skygym-logo-100x267.webp';
+import Logo from '../../../../public/assets/skygym-logo-baltas.webp';
 import { DesktopMenu } from './DesktopMenu';
 import { MobileMenu } from './MobileMenu';
 

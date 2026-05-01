@@ -1,8 +1,35 @@
 {
   "home_page": {
     "title": "Gym in Vilnius",
-    "subTitle": "Gym access is",
-    "subTitleSpan": "UNLIMITED"
+    "subTitle": "Gym access is unlimited",
+    "sectionOptionsTitle": "Why SkyGym?",
+    "sectionOptionsSubTitle": "Real sport. No games.",
+    "sectionOptionsParagraph": "At The SkyGym, we believe that everyone has the potential to transform their life through fitness. Since 2003, we've been helping people of all fitness levels achieve their goals in a supportive, motivating environment.",
+    "sectionEquipmentTitle": "Everything You Need to",
+    "sectionEquipmentSubTitle": "Reach Your Goals",
+    "optionNoContractsTitle": "No Contracts",
+    "optionNoContractsText": "Pay for a month, train for a month. No strings attached.",
+    "optionUnlimitedAccessTitle": "Unlimited Access",
+    "optionUnlimitedAccessText": "Your workout shouldn't have a stopwatch. Train as long as you need.",
+    "optionEquipmentTitle": "Precision Equipment",
+    "optionEquipmentText": "Incremental weights (every 1kg) for serious progress.",
+    "optionCoachingTitle": "Expert Coaching",
+    "optionCoachingText": "Direct access to a champion-level trainer for plans or personal sessions.",
+    "servicePowerTitle": "Strength Training",
+    "servicePowerDesc": "Build muscle and increase strength with our comprehensive weight training programs and state-of-the-art equipment.",
+    "servicePowerItem1": "Free weights",
+    "servicePowerItem2": "Machines & cables",
+    "servicePowerItem3": "Progressive plans",
+    "serviceGymnasticsTitle": "Gymnastics & Stretching",
+    "serviceGymnasticsDesc": "Flexibility, coordination and functional movement exercises suitable for all levels.",
+    "serviceGymnasticsItem1": "Stretching zones",
+    "serviceGymnasticsItem2": "Bodyweight exercises",
+    "serviceGymnasticsItem3": "Mobility drills",
+    "serviceCardioTitle": "Cardio Zone",
+    "serviceCardioDesc": "Modern cardio equipment to strengthen your heart and burn calories.",
+    "serviceCardioItem1": "Treadmills",
+    "serviceCardioItem2": "Bikes & ellipticals",
+    "serviceCardioItem3": "Rowing machines"
   },
 
   "pricelist_page": {
