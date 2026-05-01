@@ -1,8 +1,35 @@
 {
   "home_page": {
-    "title": "Спортивный клуб в Вильнюсе",
-    "subTitle": "Часы посещения",
-    "subTitleSpan": "НЕ ОГРАНИЧЕНЫ"
+    "title": "Спортивный зал в Вильнюсе",
+    "subTitle": "Часы посещения не ограничены",
+    "sectionOptionsTitle": "Почему спортивный зал SkyGym?",
+    "sectionOptionsSubTitle": "Чисто спорт. Ни каких игр.",
+    "sectionOptionsParagraph": "В SkyGym мы верим, что каждый человек способен изменить свою жизнь с помощью фитнеса и активного образа жизни. С 2003 года мы помогаем людям с любым уровнем физической подготовки достигать своих целей в поддерживающей, мотивирующей и дружелюбной атмосфере.",
+    "sectionEquipmentTitle": "Всё, что нужно для",
+    "sectionEquipmentSubTitle": "достижения твоей цели",
+    "optionNoContractsTitle": "Без контрактов",
+    "optionNoContractsText": "Оплачивайте месяц — тренируйтесь месяц. Без обязательств и долгосрочных договоров.",
+    "optionUnlimitedAccessTitle": "Неограниченный доступ",
+    "optionUnlimitedAccessText": "У вашей тренировки не должно быть таймера. Тренируйтесь столько, сколько нужно.",
+    "optionEquipmentTitle": "Точное оборудование",
+    "optionEquipmentText": "Постепенное увеличение нагрузки (каждый 1 кг) для серьёзного прогресса.",
+    "optionCoachingTitle": "Профессиональный тренер",
+    "optionCoachingText": "Прямой доступ к тренеру чемпионского уровня для программ и персональных занятий.",
+    "servicePowerTitle": "Силовые тренировки",
+    "servicePowerDesc": "Развитие силы и мышечной массы с помощью комплексной программы тренировок с отягощениями и современного оборудования.",
+    "servicePowerItem1": "Свободные веса",
+    "servicePowerItem2": "Тренажёры и кабели",
+    "servicePowerItem3": "Прогрессивные планы",
+    "serviceGymnasticsTitle": "Гимнастика и растяжка",
+    "serviceGymnasticsDesc": "Упражнения на гибкость, координацию и функциональные движения, подходящие для любого уровня.",
+    "serviceGymnasticsItem1": "Зоны растяжки",
+    "serviceGymnasticsItem2": "Упражнения с весом тела",
+    "serviceGymnasticsItem3": "Тренировки подвижности",
+    "serviceCardioTitle": "Кардиозона",
+    "serviceCardioDesc": "Современные кардиотренажёры для укрепления сердца и сжигания калорий.",
+    "serviceCardioItem1": "Беговые дорожки",
+    "serviceCardioItem2": "Велотренажёры и эллипсы",
+    "serviceCardioItem3": "Гребные тренажёры"
   },
 
   "pricelist_page": {

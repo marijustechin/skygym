@@ -1,8 +1,35 @@
 {
   "home_page": {
     "title": "Sporto klubas Vilniuje",
-    "subTitle": "Lankymo valandos",
-    "subTitleSpan": "NERIBOJAMOS"
+    "subTitle": "Lankymo valandos neribojamos",
+    "sectionOptionsTitle": "Kodėl sporto klubas SkyGym?",
+    "sectionOptionsSubTitle": "Tikras sportas. Jokių žaidimų.",
+    "sectionOptionsParagraph": "SkyGym sporto klubas tiki, kad kiekvienas žmogus turi galimybę pakeisti savo gyvenimą per sportą ir aktyvų gyvenimo būdą. Nuo 2003 metų mūsų sporto klubas padeda įvairaus fizinio pasirengimo žmonėms siekti savo tikslų palaikančioje, motyvuojančioje ir draugiškoje aplinkoje.",
+    "sectionEquipmentTitle": "Turime viską ko reikia,",
+    "sectionEquipmentSubTitle": "kad pasiektum savo tikslą",
+    "optionNoContractsTitle": "Jokių sutarčių",
+    "optionNoContractsText": "Susimoki už mėnesį, sportuoji mėnesį. Jokių įsipareigojimų.",
+    "optionUnlimitedAccessTitle": "Neribotas laikas",
+    "optionUnlimitedAccessText": "Tavo treniruotė neturi chronometro. Sportuok tiek, kiek tau reikia.",
+    "optionEquipmentTitle": "Tikslumas ir progresas",
+    "optionEquipmentText": "Svoriai kas 1 kg – nuosekliam ir rimtam tobulėjimui.",
+    "optionCoachingTitle": "Profesionalūs treneriai",
+    "optionCoachingText": "Tiesioginis bendravimas su čempionų lygio treneriu – planai ir sesijos.",
+    "servicePowerTitle": "Jėgos treniruotės",
+    "servicePowerDesc": "Ugdymas jėgos ir raumenų masės su visapusiška svarmenų programa ir modernia įranga.",
+    "servicePowerItem1": "Laisvi svoriai",
+    "servicePowerItem2": "Mašinos ir kabeliai",
+    "servicePowerItem3": "Progresyvūs planai",
+    "serviceGymnasticsTitle": "Gimnastika ir tempimas",
+    "serviceGymnasticsDesc": "Lankstumo, koordinacijos ir funkcinio judėjimo pratimai – tinka visiems lygiams.",
+    "serviceGymnasticsItem1": "Tempimo zonos",
+    "serviceGymnasticsItem2": "Kūno svorio pratimai",
+    "serviceGymnasticsItem3": "Judrumo treniruotės",
+    "serviceCardioTitle": "Kardio zona",
+    "serviceCardioDesc": "Šiuolaikiški kardio įrenginiai, padedantys stiprinti širdį ir deginti kalorijas.",
+    "serviceCardioItem1": "Bėgimo takeliai",
+    "serviceCardioItem2": "Dviračiai ir elipsiniai",
+    "serviceCardioItem3": "Irklavimo treniruokliai"
   },
 
   "pricelist_page": {

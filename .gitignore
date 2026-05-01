@@ -48,4 +48,6 @@ pnpm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
+.continue
+
 info.md

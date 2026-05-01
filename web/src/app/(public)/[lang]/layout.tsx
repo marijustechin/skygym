@@ -27,9 +27,7 @@ export default async function LangLayout({ children, params }: LayoutProps) {
   return (
     <>
       <Header lang={language} dict={dict.public} />
-      <main className="w-full">
-        <div className="container mx-auto">{children}</div>
-      </main>
+      <main className="w-full">{children}</main>
       <Footer
         lang={language}
         dict={dict.public.footer}
