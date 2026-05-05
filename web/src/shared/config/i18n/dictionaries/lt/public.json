@@ -33,7 +33,28 @@
   },
 
   "pricelist_page": {
-    "title": "Kainorastis cia bus"
+    "title": "Kainoraštis",
+    "subTitle": "Sporto klube lankymo valandos neribojamos – sportuokite jums patogiu laiku!",
+    "adminHoursNotice": "Administracijos darbo laikas: I – V 15:00 – 21:00",
+    "perMonth": "/mėn.",
+    "haveQuestions": "Turite klausimų?",
+    "contactUs": "Parašykite mums",
+    "unlimitedHours": "Neribotos lankymo valandos",
+    "readyTrainers": "Pasirengę padėti instruktoriai",
+    "yearDiscounts": "Nuolaidos ištisus metus",
+    "saveLabel": "Sutaupyk {amount} €!",
+    "planStandardTitle": "Abonementas STANDARTAS",
+    "planStandardDesc": "Skirtas visiems, kurie nori sportuoti be apribojimų.",
+    "planStudentTitle": "Abonementas STUDENTAS",
+    "planStudentDesc": "Skirtas moksleiviams ir studentams, turintiems galiojantį pažymėjimą.",
+    "planFitnessTitle": "Abonementas FITNESS",
+    "planFitnessDesc": "Skirtas tiek moterims, tiek vyrams, kurie nenaudoja laisvų svorių (hantelių sunkesnių nei 10 kg).",
+    "planSixMonthTitle": "6 mėn. abonementas",
+    "planSixMonthDesc": "Abonementas negali būti stabdomas ilgiau nei 2 savaites.",
+    "planSingleVisitTitle": "Vienkartinis apsilankymas",
+    "planSingleVisitDesc": "",
+    "planPersonalTrainingTitle": "Asmeninė treniruotė",
+    "planPersonalTrainingDesc": ""
   },
 
   "rules_page": {
