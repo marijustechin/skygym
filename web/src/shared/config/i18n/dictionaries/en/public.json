@@ -33,7 +33,28 @@
   },
 
   "pricelist_page": {
-    "title": "Pricelist page title"
+    "title": "Pricelist",
+    "subTitle": "Gym hours are unlimited – train whenever it suits you!",
+    "adminHoursNotice": "Administration hours: Mon–Fri 3 PM – 9 PM",
+    "perMonth": "/mo.",
+    "haveQuestions": "Have questions?",
+    "contactUs": "Contact us",
+    "unlimitedHours": "Unlimited access hours",
+    "readyTrainers": "Trainers ready to help",
+    "yearDiscounts": "Year-round discounts",
+    "saveLabel": "Save {amount} €!",
+    "planStandardTitle": "STANDARD Membership",
+    "planStandardDesc": "For everyone who wants to train without restrictions.",
+    "planStudentTitle": "STUDENT Membership",
+    "planStudentDesc": "For students and pupils with a valid student ID.",
+    "planFitnessTitle": "FITNESS Membership",
+    "planFitnessDesc": "For both men and women who do not use free weights (dumbbells heavier than 10 kg).",
+    "planSixMonthTitle": "6 Month Membership",
+    "planSixMonthDesc": "Membership cannot be paused for longer than 2 weeks.",
+    "planSingleVisitTitle": "Single Visit",
+    "planSingleVisitDesc": "",
+    "planPersonalTrainingTitle": "Personal Training",
+    "planPersonalTrainingDesc": ""
   },
 
   "rules_page": {

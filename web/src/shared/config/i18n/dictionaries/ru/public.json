@@ -33,7 +33,28 @@
   },
 
   "pricelist_page": {
-    "title": "Pricelist rusiskai"
+    "title": "Цены",
+    "subTitle": "Часы посещения не ограничены – тренируйтесь в удобное для вас время!",
+    "adminHoursNotice": "Часы работы администрации: Пн–Пт 15:00 – 21:00",
+    "perMonth": "/мес.",
+    "haveQuestions": "Есть вопросы?",
+    "contactUs": "Напишите нам",
+    "unlimitedHours": "Неограниченные часы посещения",
+    "readyTrainers": "Инструкторы готовы помочь",
+    "yearDiscounts": "Скидки круглый год",
+    "saveLabel": "Экономьте {amount} €!",
+    "planStandardTitle": "Абонемент СТАНДАРТ",
+    "planStandardDesc": "Для всех, кто хочет тренироваться без ограничений.",
+    "planStudentTitle": "Абонемент СТУДЕНТ",
+    "planStudentDesc": "Для учащихся и студентов с действующим удостоверением.",
+    "planFitnessTitle": "Абонемент ФИТНЕС",
+    "planFitnessDesc": "Для мужчин и женщин, не использующих свободные веса (гантели тяжелее 10 кг).",
+    "planSixMonthTitle": "Абонемент на 6 месяцев",
+    "planSixMonthDesc": "Абонемент нельзя приостановить более чем на 2 недели.",
+    "planSingleVisitTitle": "Разовое посещение",
+    "planSingleVisitDesc": "",
+    "planPersonalTrainingTitle": "Персональная тренировка",
+    "planPersonalTrainingDesc": ""
   },
 
   "rules_page": {
