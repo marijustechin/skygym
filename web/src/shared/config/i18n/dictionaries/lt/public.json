@@ -41,7 +41,9 @@
   },
 
   "contacts_page": {
-    "title": "Kontaktai"
+    "title": "Kontaktai",
+    "subTitle": "Apsilankykite mūsų sporto klube jau šiandien arba susisiekite su mumis visais klausimais dėl asmeninių treniruočių, sporto įrangos bei narystės planų.",
+    "mapTitle": "Kaip mus rasti"
   },
 
   "login_page": {
@@ -49,7 +51,18 @@
   },
 
   "common": {
-    "selectLangTitle": "Pasirinkite kalbą"
+    "selectLangTitle": "Pasirinkite kalbą",
+    "gym_hours_title": "Sporto klubo darbo laikas",
+    "gym_hours_weekdays": "Pr–Pn: 6:00 – 23:00",
+    "admin_hours_title": "Administracijos darbo laikas",
+    "admin_hours_weekdays": "Pr–Pn: 6 AM – 11 PM",
+    "gym_hours_weekends": "Št–S: 8:00 – 18:00",
+    "admin_hours_weekends": "Št–S: 8:00 – 18:00",
+    "address_title": "Adresas",
+    "address": "Ateities 10, Vilnius",
+    "contacts_title": "Kontaktai",
+    "phone": "+370 637 77753",
+    "email": "info@skygym.lt"
   },
 
   "menu_links": {
@@ -61,14 +74,6 @@
 
   "footer": {
     "description": "Tavo jėga prasideda čia. Moderni įranga, profesionalūs treneriai ir draugiška atmosfera.",
-    "hours_title": "Darbo laikas",
-    "hours_weekdays": "Pir–Pen: 6:00 – 23:00",
-    "hours_weekends": "Šeš–Sek: 8:00 – 22:00",
-    "navigation_title": "Meniu",
-    "contacts_title": "Kontaktai",
-    "address": "Ateities 10, Vilnius",
-    "phone": "+370 637 77753",
-    "email": "info@skygym.lt",
     "copyright": "© {year} SkyGym",
     "link_to_home": "Sporto klubas Vilniuje"
   }

@@ -48,12 +48,12 @@ export const LanguageSwitcher = () => {
   return (
     <div ref={menuRef} className="hidden md:flex relative z-50">
       <button
-        className="flex items-center cursor-pointer"
+        className="flex items-center cursor-pointer uppercase text-slate-50 font-bold text-lg bg-slate-800 py-2 px-3 rounded-full"
         aria-label={isLangMenuOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isLangMenuOpen}
         onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
       >
-        <LanguageFlag lang={currentLang} />
+        {currentLang}
       </button>
 
       {isLangMenuOpen && (

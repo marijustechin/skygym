@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './card';
 import { cn } from '../lib/utils';
 
 interface FormShellProps {
@@ -15,14 +14,17 @@ export const FormShell = ({
   className,
 }: FormShellProps) => {
   return (
-    <Card size='sm' className={cn('mx-auto w-full max-w-sm', className)}>
-      <CardHeader>
-        <CardTitle className='font-semibold text-center'>
-          {headerLabel}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>{children}</CardContent>
-      {footer && <CardFooter>{footer}</CardFooter>}
-    </Card>
+    <section
+      className={cn(
+        'mx-auto w-full max-w-sm border-2 border-slate-600 rounded-lg p-6 bg-slate-800',
+        className,
+      )}
+    >
+      <h2 className="text-center text-slate-50 font-semibold text-xl py-3">
+        {headerLabel}
+      </h2>
+      {children}
+      {footer && <footer className="mt-6">{footer}</footer>}
+    </section>
   );
 };

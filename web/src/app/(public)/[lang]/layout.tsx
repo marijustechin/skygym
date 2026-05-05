@@ -28,11 +28,7 @@ export default async function LangLayout({ children, params }: LayoutProps) {
     <>
       <Header lang={language} dict={dict.public} />
       <main className="w-full">{children}</main>
-      <Footer
-        lang={language}
-        dict={dict.public.footer}
-        menuLinks={dict.public.menu_links}
-      />
+      <Footer lang={language} dict={dict.public} />
     </>
   );
 }

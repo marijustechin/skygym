@@ -9,6 +9,7 @@ import {
   Activity,
   Heart,
 } from 'lucide-react';
+import { InfoCard } from '@/shared/ui/info-card';
 import heroImg from '../../../../public/img/home-page/pradzia-hero.webp';
 import optionGirl from '../../../../public/img/home-page/options/merginos-sporto-klube.webp';
 import optionPush from '../../../../public/img/home-page/options/skygym-spaudimas.webp';
@@ -19,35 +20,6 @@ import serviceGymnastics from '../../../../public/img/home-page/options/gimnasti
 import serviceCardio from '../../../../public/img/home-page/options/paslaugos-laikinas.webp';
 
 // ── Card Components ──────────────────────────────────────────────────────────
-
-function OptionsCard({
-  title,
-  text,
-  icon,
-}: {
-  title: string;
-  text: string;
-  icon: React.ReactNode;
-}) {
-  return (
-    <article className="text-slate-950 flex flex-col gap-6 rounded-xl border-2 border-slate-600 hover:border-slate-600/50 transition-colors duration-300">
-      <div className="last:pb-6 p-6">
-        <div className="flex items-start space-x-4">
-          <div
-            className="bg-slate-300 p-3 rounded-lg shrink-0"
-            aria-hidden="true"
-          >
-            {icon}
-          </div>
-          <div>
-            <h3 className="font-bold mb-2 text-slate-950">{title}</h3>
-            <p>{text}</p>
-          </div>
-        </div>
-      </div>
-    </article>
-  );
-}
 
 function ServiceCard({
   image,
@@ -65,15 +37,15 @@ function ServiceCard({
   items: string[];
 }) {
   return (
-    <article className="text-slate-950 flex flex-col gap-6 rounded-xl border group hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+    <article className="group flex flex-col gap-6 overflow-hidden rounded-xl border text-slate-950 shadow transition-shadow duration-300 hover:shadow-lg">
       <div className="relative">
         <Image
           alt={imageAlt}
           src={image}
-          className="w-full h-48 object-cover"
+          className="h-48 w-full object-cover"
         />
         <div
-          className="absolute top-4 left-4 bg-white/90 p-2 rounded-lg"
+          className="absolute left-4 top-4 rounded-lg bg-white/90 p-2"
           aria-hidden="true"
         >
           {icon}
@@ -82,13 +54,13 @@ function ServiceCard({
       <div className="px-6 pt-2">
         <h3 className="text-xl font-semibold">{title}</h3>
       </div>
-      <div className="px-6 last:pb-6 space-y-4">
-        <p className="text-slate-600 leading-relaxed">{description}</p>
+      <div className="space-y-4 px-6 last:pb-6">
+        <p className="leading-relaxed text-slate-600">{description}</p>
         <ul className="space-y-2">
           {items.map((item) => (
             <li key={item} className="flex items-center text-sm">
               <span
-                className="w-1.5 h-1.5 bg-red-600 rounded-full mr-3 shrink-0"
+                className="mr-3 h-1.5 w-1.5 shrink-0 rounded-full bg-red-600"
                 aria-hidden="true"
               />
               {item}
@@ -115,7 +87,7 @@ export default async function Home({
     {
       image: servicePower,
       imageAlt: 'Jėgos treniruotės',
-      icon: <Dumbbell className="w-5 h-5" />,
+      icon: <Dumbbell className="h-5 w-5" />,
       title: t.servicePowerTitle,
       description: t.servicePowerDesc,
       items: [t.servicePowerItem1, t.servicePowerItem2, t.servicePowerItem3],
@@ -123,7 +95,7 @@ export default async function Home({
     {
       image: serviceGymnastics,
       imageAlt: 'Gimnastika ir tempimas',
-      icon: <Activity className="w-5 h-5" />,
+      icon: <Activity className="h-5 w-5" />,
       title: t.serviceGymnasticsTitle,
       description: t.serviceGymnasticsDesc,
       items: [
@@ -135,7 +107,7 @@ export default async function Home({
     {
       image: serviceCardio,
       imageAlt: 'Kardio zona',
-      icon: <Heart className="w-5 h-5" />,
+      icon: <Heart className="h-5 w-5" />,
       title: t.serviceCardioTitle,
       description: t.serviceCardioDesc,
       items: [t.serviceCardioItem1, t.serviceCardioItem2, t.serviceCardioItem3],
@@ -156,7 +128,7 @@ export default async function Home({
           <h1 className="text-4xl font-bold uppercase tracking-wider text-slate-50 md:text-5xl lg:text-6xl">
             {t.title}
           </h1>
-          <p className="text-slate-100 font-bold uppercase tracking-wider text-xl md:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] bg-red-600/55 p-3 rounded-xl">
+          <p className="rounded-xl bg-red-600/55 p-3 text-xl font-bold uppercase tracking-wider text-slate-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] md:text-2xl">
             {t.subTitle}
           </p>
         </div>
@@ -165,46 +137,54 @@ export default async function Home({
       {/* About */}
       <section
         id="about"
-        className="container mx-auto py-10 px-1 lg:px-0 border-b border-slate-400"
+        className="container mx-auto border-b border-slate-400 px-1 py-10 lg:px-0"
         aria-labelledby="about-heading"
       >
         {/* Options */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="space-y-8">
             <div className="space-y-4">
               <h2
                 id="about-heading"
-                className="font-semibold uppercase text-center text-2xl md:text-3xl lg:text-4xl text-slate-950"
+                className="text-center text-2xl font-semibold uppercase text-slate-950 md:text-3xl lg:text-4xl"
               >
                 {t.sectionOptionsTitle}
               </h2>
-              <p className="font-semibold text-lg md:text-xl lg:text-2xl uppercase text-center text-red-600">
+              <p className="text-center text-lg font-semibold uppercase text-red-600 md:text-xl lg:text-2xl">
                 {t.sectionOptionsSubTitle}
               </p>
               <p className="text-center text-slate-950">
                 {t.sectionOptionsParagraph}
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <OptionsCard
-                title={t.optionNoContractsTitle}
-                text={t.optionNoContractsText}
-                icon={<FileX />}
+            <div className="grid gap-6 sm:grid-cols-2">
+              <InfoCard
+                card={{
+                  title: t.optionNoContractsTitle,
+                  icon: <FileX />,
+                  lines: [{ text: t.optionNoContractsText, important: false }],
+                }}
               />
-              <OptionsCard
-                title={t.optionEquipmentTitle}
-                text={t.optionEquipmentText}
-                icon={<Dumbbell />}
+              <InfoCard
+                card={{
+                  title: t.optionEquipmentTitle,
+                  icon: <Dumbbell />,
+                  lines: [{ text: t.optionEquipmentText, important: false }],
+                }}
               />
-              <OptionsCard
-                title={t.optionCoachingTitle}
-                text={t.optionCoachingText}
-                icon={<UserCheck />}
+              <InfoCard
+                card={{
+                  title: t.optionCoachingTitle,
+                  icon: <UserCheck />,
+                  lines: [{ text: t.optionCoachingText, important: false }],
+                }}
               />
-              <OptionsCard
-                title={t.optionUnlimitedAccessTitle}
-                text={t.optionUnlimitedAccessText}
-                icon={<Clock />}
+              <InfoCard
+                card={{
+                  title: t.optionUnlimitedAccessTitle,
+                  icon: <Clock />,
+                  lines: [{ text: t.optionUnlimitedAccessText, important: false }],
+                }}
               />
             </div>
           </div>
@@ -212,18 +192,20 @@ export default async function Home({
           {/* Option photos */}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <div className="rounded-xl overflow-hidden shadow-lg">
+              <div className="overflow-hidden rounded-xl shadow-lg">
                 <Image src={optionGirl} alt="Merginos sporto klube" />
               </div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
+
+              <div className="overflow-hidden rounded-xl shadow-lg">
                 <Image src={optionPush} alt="SkyGym spaudimas" />
               </div>
             </div>
             <div className="space-y-4 pt-8">
-              <div className="rounded-xl overflow-hidden shadow-lg">
+              <div className="overflow-hidden rounded-xl shadow-lg">
                 <Image src={optionBoxing} alt="SkyGym boksas" />
               </div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
+
+              <div className="overflow-hidden rounded-xl shadow-lg">
                 <Image src={optionCardio} alt="SkyGym kardio pratimai" />
               </div>
             </div>
@@ -233,19 +215,20 @@ export default async function Home({
 
       {/* Services */}
       <section
-        className="container mx-auto py-10 px-1 lg:px-0"
+        className="container mx-auto px-1 py-10 lg:px-0"
         aria-labelledby="services-heading"
       >
         <h2
           id="services-heading"
-          className="font-semibold uppercase text-center text-2xl md:text-3xl lg:text-4xl text-slate-950"
+          className="text-center text-2xl font-semibold uppercase text-slate-950 md:text-3xl lg:text-4xl"
         >
           {t.sectionEquipmentTitle}
         </h2>
-        <p className="font-semibold text-lg md:text-xl lg:text-2xl uppercase text-center text-red-600">
+
+        <p className="text-center text-lg font-semibold uppercase text-red-600 md:text-xl lg:text-2xl">
           {t.sectionEquipmentSubTitle}
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}

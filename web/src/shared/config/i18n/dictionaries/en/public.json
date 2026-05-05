@@ -41,7 +41,9 @@
   },
 
   "contacts_page": {
-    "title": "Contacts"
+    "title": "Contacts",
+    "subTitle": "Visit our gym today or contact us with any questions regarding personal training, fitness equipment, or membership plans.",
+    "mapTitle": "How to find us"
   },
 
   "login_page": {
@@ -49,7 +51,18 @@
   },
 
   "common": {
-    "selectLangTitle": "Select language"
+    "selectLangTitle": "Select language",
+    "gym_hours_title": "Gym Working Hours",
+    "gym_hours_weekdays": "Mon–Fri: 6 AM – 10 PM",
+    "admin_hours_title": "Administration Working Hours",
+    "admin_hours_weekdays": "Mon–Fri: 3 PM – 9 PM",
+    "gym_hours_weekends": "Sat–Sun: 10 AM – 6 PM",
+    "admin_hours_weekends": "Sat–Sun: 3 AM – 9 PM",
+    "address_title": "Address",
+    "address": "Ateities 10, Vilnius",
+    "contacts_title": "Contacts",
+    "phone": "+370 637 77753",
+    "email": "info@skygym.lt"
   },
 
   "menu_links": {
@@ -61,14 +74,6 @@
 
   "footer": {
     "description": "Your strength starts here. Modern gym equipment, expert trainers, and unbeatable atmosphere.",
-    "hours_title": "Working Hours",
-    "hours_weekdays": "Mon–Fri: 6 AM – 11 PM",
-    "hours_weekends": "Sat–Sun: 8 AM – 10 PM",
-    "navigation_title": "Menu",
-    "contacts_title": "Contacts",
-    "address": "Ateities 10, Vilnius",
-    "phone": "+370 637 77753",
-    "email": "info@skygym.lt",
     "copyright": "© {year} SkyGym",
     "link_to_home": "Gym in Vilnius"
   }
