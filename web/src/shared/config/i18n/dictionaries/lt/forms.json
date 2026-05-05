@@ -4,6 +4,7 @@
     "input_email_label": "El. paštas",
     "input_password_label": "Slaptažodis",
     "input_confirm_password_label": "Pakartokite slaptažodį",
+    "input_message_label": "Laiško tekstas",
     "login_question": "Jau esate užsiregistravęs?",
     "login_link": "Prašome prisijungti",
     "login_button": "Prisijungti",
@@ -19,6 +20,10 @@
     "title": "Registracija",
     "submit_button": "Užsiregistruoti"
   },
+  "contact": {
+    "title": "Parašyk mums",
+    "submit_button": "Siųsti"
+  },
   "validation": {
     "first_name_required": "Pamiršote įrašyti savo vardą",
     "first_name_invalid": "Vardą gali sudaryti raidės, skaičiai, ', -",
@@ -27,10 +32,13 @@
     "email_required": "El. pašto adresas privalomas",
     "email_invalid": "Neteisingas el. pašto adreso formatas",
     "email_max_length": "El. paštas per ilgas",
+    "message_required": "Prašome įrašyti žinutę",
+    "message_min_length": "Žinutė turi būti bent 10 simbolių ilgio",
+    "message_max_length": "Žinutė negali būti ilgesnė kaip 1000 simbolių",
     "password_max_length": "Slaptažodis per ilgas",
     "password_min_length": "Slaptažodis turi būti ne trumpesnis kaip 6 simboliai",
     "confirm_password_required": "Prašome patvirtinti slaptažodį",
-    "passwords_do_not_match": "Slaptažodžis nesutampa",
+    "passwords_do_not_match": "Slaptažodis nesutampa",
     "password_invalid": "Slaptažodyje turi būti bent viena raidė ir vienas skaičius",
     "password_required": "Slaptažodis privalomas"
   },
@@ -38,10 +46,11 @@
     "USER_REGISTRATION_EMAIL_IN_USE": "Šis el. pašto adresas jau naudojamas",
     "USER_REGISTRATION_SUCCESSFUL": "Registracija sėkminga. Patikrinkite savo el. paštą ir patvirtinkite adresą",
     "VALIDATION_FAILED": "Pateikti neteisingi duomenys. Prašome patikrinti formą ir mėginti dar kartą.",
-    "EMAIL_VERIFICATION_TOKEN_NOT_EXISTS": "Email verification token does not exists",
-    "EMAIL_VERIFICATION_TOKEN_EXPIRED": "Email verification token expired",
-    "EMAIL_VERIFICATION_SUCCESSFUL": "Your email verified successfully. Please login",
-    "EMAIL_VERIFICATION_TOKEN_INVALID": "Neteisingas duomenų formatas. Ką darom?",
-    "UNKNOWN_ERROR": "Kažkas nepavyko. Bandykite dar kartą vėliau."
+    "EMAIL_VERIFICATION_TOKEN_NOT_EXISTS": "El. pašto patvirtinimo raktas neegzistuoja",
+    "EMAIL_VERIFICATION_TOKEN_EXPIRED": "El. pašto patvirtinimo raktas nebegalioja",
+    "EMAIL_VERIFICATION_SUCCESSFUL": "El. paštas sėkmingai patvirtintas. Prašome prisijungti",
+    "EMAIL_VERIFICATION_TOKEN_INVALID": "Neteisingas duomenų formatas",
+    "UNKNOWN_ERROR": "Kažkas nepavyko. Bandykite dar kartą vėliau.",
+    "CONTACT_FORM_SUBMITTED": "Žinutė sėkmingai išsiųsta! Netrukus su jumis susisieksime."
   }
 }

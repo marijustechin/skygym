@@ -4,6 +4,7 @@
     "input_email_label": "Email",
     "input_password_label": "Password",
     "input_confirm_password_label": "Repeat password",
+    "input_message_label": "Email text",
     "login_question": "Already registered?",
     "login_link": "Please log in",
     "login_button": "Login",
@@ -19,6 +20,10 @@
     "title": "Registration",
     "submit_button": "Register"
   },
+  "contact": {
+    "title": "Contact Us",
+    "submit_button": "Send"
+  },
   "validation": {
     "first_name_required": "You forgot to enter your first name",
     "first_name_invalid": "First name can contain letters, numbers, apostrophes, and hyphens",
@@ -27,6 +32,9 @@
     "email_required": "Email address is required",
     "email_invalid": "Invalid email address format",
     "email_max_length": "Email is too long",
+    "message_required": "Message is required",
+    "message_min_length": "Message must be at least 10 characters",
+    "message_max_length": "Message must be no longer than 1000 characters",
     "password_max_length": "Password is too long",
     "password_min_length": "Password must be at least 6 characters long",
     "confirm_password_required": "Please confirm your password",
@@ -41,7 +49,8 @@
     "EMAIL_VERIFICATION_TOKEN_NOT_EXISTS": "Email verification token does not exists",
     "EMAIL_VERIFICATION_TOKEN_EXPIRED": "Email verification token expired",
     "EMAIL_VERIFICATION_SUCCESSFUL": "Your email verified successfully. Please login",
-    "EMAIL_VERIFICATION_TOKEN_INVALID": "Neteisingas duomenų formatas. Ką darom?",
-    "UNKNOWN_ERROR": "Something went wrong. Please try again later."
+    "EMAIL_VERIFICATION_TOKEN_INVALID": "Invalid data format.",
+    "UNKNOWN_ERROR": "Something went wrong. Please try again later.",
+    "CONTACT_FORM_SUBMITTED": "Message sent successfully! We will contact you soon."
   }
 }

@@ -41,15 +41,28 @@
   },
 
   "contacts_page": {
-    "title": "Контакты"
+    "title": "Контакты",
+    "subTitle": "Посетите наш тренажерный зал уже сегодня или свяжитесь с нами по любым вопросам: персональные тренировки, оборудование или планы членства.",
+    "mapTitle": "Как нас найти"
   },
 
   "login_page": {
-    "title": "Prisijungti"
+    "title": "Вход"
   },
 
   "common": {
-    "selectLangTitle": "Выберите язык"
+    "selectLangTitle": "Выберите язык",
+    "gym_hours_title": "Часы работы",
+    "gym_hours_weekdays": "Пн–Пт: 6:00 – 23:00",
+    "admin_hours_title": "Часы работы",
+    "admin_hours_weekdays": "Пн–Пт: 8:00 – 22:00",
+    "gym_hours_weekends": "Сб–Вс: 6:00 – 23:00",
+    "admin_hours_weekends": "Сб–Вс: 8:00 – 22:00",
+    "address_title": "",
+    "address": "Ateities 10, Vilnius",
+    "contacts_title": "Контакты",
+    "phone": "+370 637 77753",
+    "email": "info@skygym.lt"
   },
 
   "menu_links": {
@@ -61,14 +74,6 @@
 
   "footer": {
     "description": "Твоя сила начинается здесь. Современное оборудование, профессиональные тренеры и дружеская атмосфера.",
-    "hours_title": "Часы работы",
-    "hours_weekdays": "Пн–Пт: 6:00 – 23:00",
-    "hours_weekends": "Сб–Вс: 8:00 – 22:00",
-    "navigation_title": "Меню",
-    "contacts_title": "Контакты",
-    "address": "Ateities 10, Vilnius",
-    "phone": "+370 637 77753",
-    "email": "info@skygym.lt",
     "copyright": "© {year} SkyGym",
     "link_to_home": "Спортивный клуб в Вильнюсе"
   }

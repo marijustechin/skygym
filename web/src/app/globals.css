@@ -152,9 +152,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
@@ -164,14 +166,23 @@
     margin-bottom: 1.5rem;
     margin-top: 1rem;
   }
+
+  @layer base {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus {
+      -webkit-text-fill-color: #f9fafb;
+      -webkit-box-shadow: 0 0 0px 1000px #364153 inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
 }
 
 @layer utilities {
   .skygym-footer {
     @apply bg-slate-950 text-slate-50;
-  }
-
-  .form-input {
-    @apply autofill:transition-colors autofill:duration-[999999999s];
   }
 }

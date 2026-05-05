@@ -3,21 +3,26 @@
     "input_name_label": "Имя",
     "input_email_label": "Ел. почта",
     "input_password_label": "Пароль",
-    "input_confirm_password_label": "Павторите пароль",
-    "login_question": "Already registered?",
-    "login_link": "Please login",
-    "login_button": "Зайти",
-    "register_question": "Have no account?",
-    "register_link": "Plese register",
-    "please_wait_message": "Please wait a second..."
+    "input_confirm_password_label": "Повторите пароль",
+    "input_message_label": "Текст сообщения",
+    "login_question": "Уже зарегистрированы?",
+    "login_link": "Пожалуйста, войдите",
+    "login_button": "Войти",
+    "register_question": "Нет аккаунта?",
+    "register_link": "Пожалуйста, зарегистрируйтесь",
+    "please_wait_message": "Пожалуйста, подождите..."
   },
   "login": {
-    "title": "Регистрация",
-    "submit_button": "Зарегистрироватся"
+    "title": "Вход",
+    "submit_button": "Войти"
   },
   "registration": {
     "title": "Регистрация",
-    "submit_button": "Зарегистрироватся"
+    "submit_button": "Зарегистрироваться"
+  },
+  "contact": {
+    "title": "Напиши нам",
+    "submit_button": "Отправить"
   },
   "validation": {
     "first_name_required": "Вы забыли указать своё имя",
@@ -27,21 +32,25 @@
     "email_required": "Адрес электронной почты обязателен",
     "email_invalid": "Неверный формат электронной почты",
     "email_max_length": "Слишком длинный email",
+    "message_required": "Сообщение обязательно",
+    "message_min_length": "Сообщение должно содержать не менее 10 символов",
+    "message_max_length": "Сообщение не должно превышать 1000 символов",
     "password_max_length": "Слишком длинный пароль",
     "password_min_length": "Пароль должен содержать не менее 6 символов",
-    "confirm_password_required": "Пожалуиста, подтвердите пароль",
-    "passwords_do_not_match": "Пороль несовпадает",
-    "password_invalid": "Пороль должен содержат хотя бы одну букву и одну цифру",
+    "confirm_password_required": "Пожалуйста, подтвердите пароль",
+    "passwords_do_not_match": "Пароль не совпадает",
+    "password_invalid": "Пароль должен содержать хотя бы одну букву и одну цифру",
     "password_required": "Пароль обязателен"
   },
   "api": {
     "USER_REGISTRATION_EMAIL_IN_USE": "Этот адрес электронной почты уже используется",
     "USER_REGISTRATION_SUCCESSFUL": "Регистрация прошла успешно. Пожалуйста, проверьте почту и подтвердите свой адрес",
     "VALIDATION_FAILED": "Переданы некорректные данные. Проверьте форму и попробуйте снова.",
-    "EMAIL_VERIFICATION_TOKEN_NOT_EXISTS": "Email verification token does not exists",
-    "EMAIL_VERIFICATION_TOKEN_EXPIRED": "Email verification token expired",
-    "EMAIL_VERIFICATION_SUCCESSFUL": "Your email verified successfully. Please login",
-    "EMAIL_VERIFICATION_TOKEN_INVALID": "Neteisingas duomenų formatas. Ką darom?",
-    "UNKNOWN_ERROR": "Что-то пошло не так. Пожалуйста, попробуйте позже."
+    "EMAIL_VERIFICATION_TOKEN_NOT_EXISTS": "Токен подтверждения email не существует",
+    "EMAIL_VERIFICATION_TOKEN_EXPIRED": "Срок действия токена подтверждения истёк",
+    "EMAIL_VERIFICATION_SUCCESSFUL": "Email успешно подтверждён. Пожалуйста, войдите",
+    "EMAIL_VERIFICATION_TOKEN_INVALID": "Неверный формат данных",
+    "UNKNOWN_ERROR": "Что-то пошло не так. Пожалуйста, попробуйте позже.",
+    "CONTACT_FORM_SUBMITTED": "Сообщение успешно отправлено! Мы скоро с вами свяжемся."
   }
 }
