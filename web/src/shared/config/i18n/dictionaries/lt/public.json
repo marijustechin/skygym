@@ -58,7 +58,35 @@
   },
 
   "rules_page": {
-    "title": "Sport klubo taisyklės"
+    "title": "Sporto klubo taisyklės",
+    "subTitle": "Taisyklės patvirtintos 2013 m. rugpjūčio mėn. 8 d.",
+    "intro": "Kiekvienas Lankytojas sporto klube „SkyGym\" įsigijęs terminuotą abonementą arba sumokėjęs vienkartinį paslaugos mokestį, įgyja teisę naudotis Sporto klubo „SkyGym\" teikiamomis paslaugomis ir tuo patvirtina, kad yra susipažinęs su Sporto klubo „SkyGym\" vidaus taisyklėmis ir įsipareigoja jų besąlygiškai laikytis.",
+    "rule1": "Sporto klubo „SkyGym\" verslo liudijimo nr.: UU588189-1, esančio adresu Ateities 10, Vilniuje (toliau – Sporto klubas) taisyklės (toliau – Taisyklės) yra privalomos visiems asmenims, kurie naudojasi Sporto klubo paslaugomis. Visi asmenys, norintys naudotis Sporto klubo paslaugomis (toliau – Lankytojas), privalo susipažinti su Taisyklėmis ir jų laikytis. Už nepilnamečius atsako jų tėvai, patvirtindami, kad nepilnamečio sveikatos būklė leidžia naudotis Sporto klubo paslaugomis, nepilnametis Lankytojas pilnai susipažino su Taisyklėmis, jų laikysis, taip pat užtikrina nepilnamečio Lankytojo Sporto klubui bei tretiems asmenims padarytos žalos atlyginimą LR teisės aktų nustatyta tvarka, atsako už jo tinkamą elgesį Sporto klube, bei bet kokį jo sveikatos sutrikimą.",
+    "rule2": "Lankytojai, norintys naudotis Sporto klubo paslaugomis, privalo sumokėti vienkartinį paslaugos mokestį arba įsigyti terminuotą abonementą (toliau – Abonementas). Įsigyjant Abonementą, Lankytojas pateikia asmens dokumentą ir duomenis apie save (vardas, pavardė, tel. Nr). Lankytojo asmeniniai ir kontaktiniai duomenys užregistruojami sporto klubo lankytojų apskaitos sistemoje bei žurnale sporto paslaugų sutarties sudarymo tikslu. Lankytojas pasirenka ir patvirtina savo parašu registracijos žurnale Lankytojo identifikavimo būdą: nuskaičius jo piršto antspaudą per pirmą registraciją. Lankytojas gali suteikti informaciją apie gyvenamąjį mikrorajoną statistikos tikslu. Kiekvieną kartą užėjęs privalo atsižymėti terminale (nuskaičius savo piršto antspaudą).",
+    "rule3": "Abonemento galiojimo laikas gali būti stabdomas prieš tai raštu informavus sporto klubą tokia tvarka:",
+    "rule3Item1": "1 mėnesio Abonementas nestabdomas jokiu atveju;",
+    "rule3Item2": "3 mėnesių Abonementas gali būti stabdomas 1 kartą ne daugiau kaip 7 dienoms;",
+    "rule3Item3": "6 mėnesių Abonementas gali būti stabdomas 1 kartą ne daugiau kaip 14 dienų;",
+    "rule3Item4": "12 mėnesių Abonementas gali būti stabdomas 2 kartus ne daugiau kaip 30 dienų.",
+    "rule4": "Įsigijus Abonementą, Lankytojas privalo pradėti lankyti Sporto klubą ne vėliau kaip per 30 dienų. Praėjus 30 dienų po apmokėjimo ir neapsilankius Sporto klube, Abonementas aktyvuojamas automatiškai ir pradedamas skaičiuoti jo galiojimo laikas. Pinigai už nepanaudotą Abonementą negrąžinami.",
+    "rule5": "Lankytojai, įsigiję vienkartinį arba pilną Abonementą įleidžiami į Sporto klubą nuo 6 val. iki 22 val. darbo dienomis, ir nuo 10 val. iki 18 val. savaitgaliais bei švenčių dienomis. Sporto klubo administracija pasilieka teisę keisti Sporto klubo darbo laiką, atsižvelgiant į švenčių ir poilsio dienas, ne vėliau kaip prieš dvi dienas skelbimu apie tai informavus Lankytojus.",
+    "rule6": "Apsilankymo trukmė sporto klube neribojama. Prieš pradedant lankytis rekomenduojama pasitikrinti sveikatos būklę bei pasitarti su savo gydytoju ir įsitikinti, ar sveikatos būklė leidžia naudotis Sporto klubo paslaugomis. Visa atsakomybė dėl Lankytojo sveikatos sutrikimų, nelaimingų atsitikimų, atsiradusių lankantis Sporto klube, tenka Lankytojui. Sporto klubas neatsako ir neatlygina Lankytojui dėl jo sveikatai ir gyvybei padarytos turtinės bei neturtinės žalos.",
+    "rule7": "Asmeninius daiktus lankytojai palieka rakinamose spintelėse persirengimo kambariuose. Sporto klubas neatsako už Lankytojų asmeninių daiktų dingimą, praradimą ar sugadinimą. Prašome nepalikti asmeninių daiktų be priežiūros. Palikti Lankytojo daiktai Sporto klube saugomi 30 dienų.",
+    "rule8": "Lankytojai privalo saugoti raktus nuo persirengimo spintelės, kuriuos nesugadintus privalo grąžinti prieš išeidamas iš sporto klubo. Vienkartinis mokestis už pamestą / sugadintą raktą – 3 Eur. Neatsiskaičius už pamestus / sugadintus daiktus, Lankytojo abonementas tampa negaliojančiu.",
+    "rule9": "Vaikai iki 7 metų į sporto klubą neįleidžiami; vaikai nuo 14 metų, įsigiję lankytojo abonementą ar vienkartinio apsilankymo paslaugą, į sporto klubą įleidžiami tik su tėvų ar globėjų raštišku sutikimu.",
+    "rule10": "Lankytojai sporto klubo patalpose privalo:",
+    "rule10Item1": "dėvėti tik sportui skirtus drabužius, bei avėti sportui tinkamą ir švarią avalynę;",
+    "rule10Item2": "susipažinti su esančios įrangos naudojimosi taisyklėmis ir būdais, bei naudoti sporto klubo inventorių bei įrangą tik pagal tiesioginę jų paskirtį;",
+    "rule10Item3": "esant bet kokiam neaiškumui dėl įrangos bei inventoriaus naudojimosi ar paskirties, kreiptis į Sporto klubo darbuotojus dėl informacijos suteikimo;",
+    "rule10Item4": "prieš atliekant pratimą, rekomenduojama ant treniruoklio pasitiesti savo rankšluostį;",
+    "rule10Item5": "atlikus pratimą, įrangą palikti švarią ir tvarkingą, svarmenis sudėti į numatytą vietą;",
+    "rule10Item6": "netrukdyti kitiems sporto klubo lankytojams naudotis teikiamomis sporto klubo paslaugomis; nedelsiant informuoti sporto klubo darbuotojus apie pastebėtus įrangos gedimus, nesinaudoti laikinai sugedusia įranga.",
+    "rule11": "Lankytojams sporto klubo patalpose draudžiama:",
+    "rule11Item1": "būti neblaiviu ar apsvaigusiu nuo psichiką veikiančių medžiagų;",
+    "rule11Item2": "fotografuoti ar filmuoti be sporto klubo administracijos raštiško leidimo;",
+    "rule11Item3": "įsinešti ir vartoti alkoholinius gėrimus, maistą, rūkyti.",
+    "rule12": "Sporto klubas turi teisę Lankytojams, nesilaikantiems šių taisyklių 8, 9, 10, 14 punktų, nutraukti bei nepatęsti Abonemento galiojimo ir pažeidusio taisykles Lankytojo neįleisti į Sporto klubą.",
+    "rule13": "Ginčai dėl sutarties netinkamo vykdymo ar nevykdymo ne teisme nagrinėjami Lietuvos Respublikos vartotojų teisių apsaugos įstatymo nustatyta tvarka Valstybinėje vartotojų teisių apsaugos tarnyboje, adresu Vilniaus g. 25, 01402 Vilnius, el. p. tarnyba@vvtat.lt, tel. (8 5) 262 67 51, faks. (8 5) 279 1466, interneto svetainė www.vvtat.lt. Elektroniniu būdu prašymą galite pateikti per EGS platformą http://ec.europa.eu/odr/."
   },
 
   "contacts_page": {
