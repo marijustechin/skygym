@@ -51,6 +51,7 @@
     "EMAIL_VERIFICATION_SUCCESSFUL": "Your email verified successfully. Please login",
     "EMAIL_VERIFICATION_TOKEN_INVALID": "Invalid data format.",
     "UNKNOWN_ERROR": "Something went wrong. Please try again later.",
-    "CONTACT_FORM_SUBMITTED": "Message sent successfully! We will contact you soon."
+    "CONTACT_FORM_SUBMITTED": "Message sent successfully! We will contact you soon.",
+    "CAPTCHA_REQUIRED": "Please verify you are not a robot."
   }
 }

@@ -4,6 +4,7 @@ import { getLanguage } from '@/shared/config/i18n/get-language';
 import { getDictionary } from '@/shared/config/i18n/get-dictionary';
 import { Header } from '@/widgets/header';
 import { Footer } from '@/widgets/footer';
+import { ToTop } from '@/shared/ui/to-top';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ export default async function LangLayout({ children, params }: LayoutProps) {
       <Header lang={language} dict={dict.public} />
       <main className="w-full">{children}</main>
       <Footer lang={language} dict={dict.public} />
+      <ToTop />
     </>
   );
 }

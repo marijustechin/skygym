@@ -51,6 +51,7 @@
     "EMAIL_VERIFICATION_SUCCESSFUL": "Email успешно подтверждён. Пожалуйста, войдите",
     "EMAIL_VERIFICATION_TOKEN_INVALID": "Неверный формат данных",
     "UNKNOWN_ERROR": "Что-то пошло не так. Пожалуйста, попробуйте позже.",
-    "CONTACT_FORM_SUBMITTED": "Сообщение успешно отправлено! Мы скоро с вами свяжемся."
+    "CONTACT_FORM_SUBMITTED": "Сообщение успешно отправлено! Мы скоро с вами свяжемся.",
+    "CAPTCHA_REQUIRED": "Пожалуйста, подтвердите, что вы не робот."
   }
 }

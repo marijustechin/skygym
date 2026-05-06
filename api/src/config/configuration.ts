@@ -46,6 +46,14 @@ export const appConfig = () => ({
     pass: process.env.MAIL_PASS,
     secure: process.env.MAIL_SECURE,
   },
+
+  contact: {
+    toEmail: parseEnvArray(process.env.CONTACT_TO_EMAIL),
+  },
+
+  turnstile: {
+    secretKey: process.env.TURNSTILE_SECRET_KEY,
+  },
 });
 
 export type AppConfig = ReturnType<typeof appConfig>;
