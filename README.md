@@ -68,7 +68,7 @@ Development is in progress.
 Production URLs:
 
 Frontend  
-https://skygym.lt
+https://www.skygym.lt
 
 API  
 https://api.skygym.lt

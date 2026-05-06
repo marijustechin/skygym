@@ -23,6 +23,19 @@ export const envValidationSchema = Joi.object({
   DB_PASS: Joi.string().required(),
   DB_PORT: Joi.number().integer().positive().required(),
 
+  // MAIL
+  MAIL_HOST: Joi.string().required(),
+  MAIL_PORT: Joi.number().integer().positive().required(),
+  MAIL_USER: Joi.string().required(),
+  MAIL_PASS: Joi.string().required(),
+  MAIL_SECURE: Joi.boolean().truthy('true').falsy('false').default(false),
+
+  // CONTACT
+  CONTACT_TO_EMAIL: Joi.string().trim().allow('').default(''),
+
+  // TURNSTILE
+  TURNSTILE_SECRET_KEY: Joi.string().trim().allow('').default(''),
+
   // JWT
   JWT_ACCESS_SECRET: Joi.string().min(16).required(),
   JWT_ACCESS_EXPIRES_IN: Joi.string().required(),

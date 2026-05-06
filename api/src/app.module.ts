@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { appConfig } from './config/configuration';
 import { envValidationSchema } from './config/env.validation';
 import { AuthModule } from './modules/auth/auth.module';
+import { ContactModule } from './modules/contact/contact.module';
 import { UsersModule } from './modules/users/users.module';
 import { MailModule } from './common/mail/mail.module';
 
@@ -19,6 +21,8 @@ import { MailModule } from './common/mail/mail.module';
         allowUnknown: true,
       },
     }),
+
+    ThrottlerModule.forRoot([{ ttl: 600_000, limit: 3 }]),
 
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
@@ -42,6 +46,7 @@ import { MailModule } from './common/mail/mail.module';
     }),
 
     AuthModule,
+    ContactModule,
     UsersModule,
     MailModule,
   ],

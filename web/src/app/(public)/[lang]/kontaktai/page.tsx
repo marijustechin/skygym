@@ -67,7 +67,7 @@ export default async function Contacts({
             ))}
           </div>
         </div>
-        <ContactForm lang={lang as Language} langStrings={dict.forms} />
+        <ContactForm langStrings={dict.forms} />
       </section>
 
       <section className="mb-10">

@@ -51,6 +51,7 @@
     "EMAIL_VERIFICATION_SUCCESSFUL": "El. paštas sėkmingai patvirtintas. Prašome prisijungti",
     "EMAIL_VERIFICATION_TOKEN_INVALID": "Neteisingas duomenų formatas",
     "UNKNOWN_ERROR": "Kažkas nepavyko. Bandykite dar kartą vėliau.",
-    "CONTACT_FORM_SUBMITTED": "Žinutė sėkmingai išsiųsta! Netrukus su jumis susisieksime."
+    "CONTACT_FORM_SUBMITTED": "Žinutė sėkmingai išsiųsta! Netrukus su jumis susisieksime.",
+    "CAPTCHA_REQUIRED": "Prašome patvirtinti, kad nesate robotas."
   }
 }

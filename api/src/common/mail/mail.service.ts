@@ -39,4 +39,31 @@ export class MailService {
       return false;
     }
   }
+
+  async sendContactNotification(
+    name: string,
+    email: string,
+    message: string,
+  ): Promise<boolean> {
+    const recipients = this.config.getOrThrow<string[]>('contact.toEmail');
+
+    try {
+      await this.mailerService.sendMail({
+        to: recipients,
+        replyTo: email,
+        subject: `Nauja žinutė iš ${name} - ${email}`,
+        html: `
+          <p><strong>Vardas:</strong> ${name}</p>
+          <p><strong>El. paštas:</strong> ${email}</p>
+          <p><strong>Žinutė:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      });
+
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
 }
