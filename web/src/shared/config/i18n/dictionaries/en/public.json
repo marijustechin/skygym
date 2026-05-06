@@ -58,7 +58,35 @@
   },
 
   "rules_page": {
-    "title": "Rules page title"
+    "title": "Gym Rules",
+    "subTitle": "Rules approved on August 8, 2013",
+    "intro": "Every Visitor who purchases a fixed-term membership or pays a one-time service fee at SkyGym acquires the right to use the services provided by SkyGym and thereby confirms that they have familiarized themselves with SkyGym's internal rules and undertake to comply with them unconditionally.",
+    "rule1": "The rules of SkyGym, business certificate No. UU588189-1, located at Ateities 10, Vilnius (hereinafter – the Gym), are mandatory for all persons using the Gym's services. All persons wishing to use the Gym's services (hereinafter – the Visitor) must familiarize themselves with the Rules and comply with them. Parents are responsible for minors, confirming that the minor's health condition allows the use of the Gym's services, that the minor Visitor has fully familiarized themselves with the Rules and will comply with them, and also ensure compensation for any damage caused by the minor Visitor to the Gym or third parties in accordance with the laws of the Republic of Lithuania, and are responsible for their proper behavior in the Gym and any health issues.",
+    "rule2": "Visitors wishing to use the Gym's services must pay a one-time service fee or purchase a fixed-term membership (hereinafter – Membership). When purchasing a Membership, the Visitor provides an identity document and personal data (name, surname, phone number). The Visitor's personal and contact data is registered in the Gym's visitor accounting system and journal for the purpose of concluding a sports service agreement. The Visitor chooses and confirms by signature in the registration journal the Visitor identification method: by scanning their fingerprint during the first registration. The Visitor may provide information about their residential area for statistical purposes. Each time the Visitor enters, they must check in at the terminal by scanning their fingerprint.",
+    "rule3": "The validity of the Membership may be suspended by prior written notice to the Gym under the following terms:",
+    "rule3Item1": "1-month Membership is not suspended under any circumstances;",
+    "rule3Item2": "3-month Membership may be suspended once for no more than 7 days;",
+    "rule3Item3": "6-month Membership may be suspended once for no more than 14 days;",
+    "rule3Item4": "12-month Membership may be suspended twice for no more than 30 days each time.",
+    "rule4": "After purchasing a Membership, the Visitor must start attending the Gym no later than 30 days. If 30 days pass after payment and the Visitor has not attended the Gym, the Membership is activated automatically and its validity period begins. Money for unused Memberships is non-refundable.",
+    "rule5": "Visitors who have purchased a single-visit or full Membership are admitted to the Gym from 6 AM to 10 PM on weekdays, and from 10 AM to 6 PM on weekends and public holidays. The Gym administration reserves the right to change the Gym's working hours, taking into account holidays and rest days, by informing Visitors no later than two days in advance via announcement.",
+    "rule6": "Visit duration at the Gym is unlimited. Before starting to attend, it is recommended to check your health and consult your doctor to make sure your health allows you to use the Gym's services. All responsibility for the Visitor's health problems, accidents that occur while attending the Gym lies with the Visitor. The Gym is not responsible for and does not compensate the Visitor for material or non-material damage to their health and life.",
+    "rule7": "Visitors leave their personal belongings in lockable lockers in the changing rooms. The Gym is not responsible for the loss, disappearance, or damage of Visitors' personal belongings. Please do not leave personal belongings unattended. Leftover Visitor belongings are kept at the Gym for 30 days.",
+    "rule8": "Visitors must take care of the changing room locker keys and return them undamaged before leaving the Gym. A one-time fee for a lost/damaged key is 3 Eur. Failure to pay for lost/damaged items will result in the Visitor's membership becoming invalid.",
+    "rule9": "Children under 7 years of age are not admitted to the Gym; children aged 14 and over who have purchased a membership or a single-visit service are admitted to the Gym only with written parental or guardian consent.",
+    "rule10": "Visitors in the Gym premises must:",
+    "rule10Item1": "wear only sportswear and clean sports-appropriate footwear;",
+    "rule10Item2": "familiarize themselves with the rules and methods of use of the available equipment, and use the Gym's inventory and equipment only for their direct purpose;",
+    "rule10Item3": "in case of any uncertainty regarding the use or purpose of equipment and inventory, contact Gym staff for information;",
+    "rule10Item4": "before performing an exercise, it is recommended to place your own towel on the machine;",
+    "rule10Item5": "after completing an exercise, leave the equipment clean and tidy, and place weights in their designated places;",
+    "rule10Item6": "not disturb other Gym visitors from using the Gym's services; immediately inform Gym staff about any observed equipment malfunctions, and not use temporarily faulty equipment.",
+    "rule11": "Visitors in the Gym premises are prohibited from:",
+    "rule11Item1": "being under the influence of alcohol or psychoactive substances;",
+    "rule11Item2": "taking photos or filming without the written permission of the Gym administration;",
+    "rule11Item3": "bringing in and consuming alcoholic beverages, food, or smoking.",
+    "rule12": "The Gym has the right to terminate or not renew the Membership of Visitors who fail to comply with points 8, 9, 10, and 14 of these rules and to deny entry to the Gym to the Visitor who has violated the rules.",
+    "rule13": "Disputes regarding improper performance or non-performance of the contract are resolved out of court in accordance with the procedure established by the Law on Consumer Rights Protection of the Republic of Lithuania at the State Consumer Rights Protection Authority, address Vilniaus g. 25, 01402 Vilnius, email tarnyba@vvtat.lt, tel. (8 5) 262 67 51, fax (8 5) 279 1466, website www.vvtat.lt. You can submit a request electronically via the EGS platform at http://ec.europa.eu/odr/."
   },
 
   "contacts_page": {
