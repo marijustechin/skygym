@@ -7,6 +7,8 @@ const parseEnvArray = (value?: string): string[] => {
     .filter(Boolean);
 };
 
+const parseEnvBoolean = (value?: string): boolean => value === 'true';
+
 export const appConfig = () => ({
   env: process.env.NODE_ENV ?? 'development',
   port: Number(process.env.PORT ?? 3003),
@@ -20,7 +22,7 @@ export const appConfig = () => ({
   },
 
   swagger: {
-    enabled: process.env.SWAGGER_ENABLED,
+    enabled: parseEnvBoolean(process.env.SWAGGER_ENABLED),
   },
 
   db: {
@@ -29,7 +31,7 @@ export const appConfig = () => ({
     user: process.env.DB_USER,
     pass: process.env.DB_PASS,
     name: process.env.DB_NAME,
-    sync: process.env.DB_SYNC,
+    sync: parseEnvBoolean(process.env.DB_SYNC),
   },
 
   jwt: {
@@ -44,7 +46,7 @@ export const appConfig = () => ({
     port: Number(process.env.MAIL_PORT),
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
-    secure: process.env.MAIL_SECURE,
+    secure: parseEnvBoolean(process.env.MAIL_SECURE),
   },
 
   contact: {
