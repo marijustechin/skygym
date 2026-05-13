@@ -6,7 +6,7 @@ import {
   HttpStatus,
   Logger,
 } from '@nestjs/common';
-import type { Request, Response } from 'express';
+import type { FastifyReply, FastifyRequest } from 'fastify';
 
 type StandardErrorResponse = {
   success: false;
@@ -20,8 +20,8 @@ export class GlobalExceptionFilter implements ExceptionFilter {
 
   catch(exception: unknown, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
-    const request = ctx.getRequest<Request>();
-    const response = ctx.getResponse<Response>();
+    const request = ctx.getRequest<FastifyRequest>();
+    const response = ctx.getResponse<FastifyReply>();
 
     if (!(exception instanceof HttpException)) {
       this.handleUnknownException(exception, request, response);
@@ -35,20 +35,20 @@ export class GlobalExceptionFilter implements ExceptionFilter {
 
     const payload = this.normalizeHttpException(status, rawResponse);
 
-    response.status(status).json(payload);
+    response.status(status).send(payload);
   }
 
   private handleUnknownException(
     exception: unknown,
-    request: Request,
-    response: Response,
+    request: FastifyRequest,
+    response: FastifyReply,
   ): void {
     this.logger.error(
       `Unhandled exception at ${request.method} ${request.url}`,
       exception instanceof Error ? exception.stack : String(exception),
     );
 
-    response.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+    response.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
       success: false,
       code: 'INTERNAL_SERVER_ERROR',
     });
@@ -56,7 +56,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
 
   private logHttpException(
     status: number,
-    request: Request,
+    request: FastifyRequest,
     rawResponse: unknown,
   ): void {
     const message = `HttpException ${status} at ${request.method} ${request.url} - ${JSON.stringify(rawResponse)}`;

@@ -19,7 +19,15 @@ import { AuthRegisterDto } from './dtos/auth-register.dto';
 import { User } from '../users/entities/user.entity';
 import { AuthLoginDto } from './dtos/auth-login.dto';
 import { AuthEmailVerifyDto } from './dtos/auth-email-verify.dto';
-import type { CookieOptions, Request, Response } from 'express';
+import type { FastifyReply, FastifyRequest } from 'fastify';
+
+interface CookieOptions {
+  httpOnly: boolean;
+  secure: boolean;
+  sameSite: 'strict' | 'lax' | 'none';
+  path: string;
+  maxAge: number;
+}
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -97,11 +105,11 @@ export class AuthController {
   @Post('login')
   async login(
     @Body() dto: AuthLoginDto,
-    @Res({ passthrough: true }) res: Response,
+    @Res({ passthrough: true }) res: FastifyReply,
   ) {
     const tokens = await this.authService.login(dto);
 
-    res.cookie('refreshToken', tokens.refreshToken, this.cookieOptions);
+    res.setCookie('refreshToken', tokens.refreshToken, this.cookieOptions);
 
     return {
       message: 'LOGIN_SUCCESSFUL',
@@ -130,8 +138,11 @@ export class AuthController {
   // refresh access token
   //
   @Post('refresh')
-  refresh(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
-    const refreshToken = req.cookies['refreshToken'] as string | undefined;
+  refresh(
+    @Req() req: FastifyRequest,
+    @Res({ passthrough: true }) res: FastifyReply,
+  ) {
+    const refreshToken = req.cookies['refreshToken'];
 
     if (!refreshToken) {
       res.clearCookie('refreshToken', this.cookieOptions);
