@@ -1,16 +1,38 @@
 import { NestFactory } from '@nestjs/core';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { setupSwagger } from './config/swagger.config';
 import { BadRequestException, ValidationPipe } from '@nestjs/common';
-import cookieParser from 'cookie-parser';
+import fastifyCookie from '@fastify/cookie';
 import { type AppConfig } from './config/configuration';
 import { GlobalExceptionFilter } from './common/api/filters/global-exception.filter';
 
-async function start() {
-  const app = await NestFactory.create(AppModule);
+declare global {
+  var PhusionPassenger:
+    | {
+        configure: (options: { autoInstall: boolean }) => void;
+      }
+    | undefined;
+}
 
-  app.use(cookieParser());
+const isPassenger = typeof PhusionPassenger !== 'undefined';
+
+// prevents the "called more than once" error
+if (isPassenger) {
+  PhusionPassenger!.configure({ autoInstall: false });
+}
+
+async function start() {
+  const app = await NestFactory.create<NestFastifyApplication>(
+    AppModule,
+    new FastifyAdapter(),
+  );
+
+  await app.register(fastifyCookie);
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -62,9 +84,18 @@ async function start() {
   }
 
   const port = config.get<number>('port') ?? 3003;
-  await app.listen(port);
+  const env = config.get<string>('env');
 
-  console.log(`API server started on port ${port}`);
+  if (isPassenger) {
+    await app.init(); // sets up NestJS modules/routes
+    const fastify = app.getHttpAdapter().getInstance();
+    await fastify.ready(); // triggers Fastify's boot phase, populating all lifecycle hooks on route contexts
+    fastify.server.listen('passenger'); // registers the server with Passenger via raw http.Server.listen()
+  } else {
+    await app.listen(port);
+  }
+
+  console.log(`API server started on port ${port}\nNodeEnv: ${env}`);
 }
 
 void start();
