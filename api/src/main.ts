@@ -8,6 +8,7 @@ import { ConfigService } from '@nestjs/config';
 import { setupSwagger } from './config/swagger.config';
 import { BadRequestException, ValidationPipe } from '@nestjs/common';
 import fastifyCookie from '@fastify/cookie';
+import fastifyHelmet from '@fastify/helmet';
 import { type AppConfig } from './config/configuration';
 import { GlobalExceptionFilter } from './common/api/filters/global-exception.filter';
 
@@ -32,13 +33,18 @@ async function start() {
     new FastifyAdapter(),
   );
 
-  await app.register(fastifyCookie);
+  const config = app.get<ConfigService<AppConfig>>(ConfigService);
+
+  const cookieSecret = config.getOrThrow<AppConfig['cookie']>('cookie').secret;
+  await app.register(fastifyCookie, { secret: cookieSecret });
+
+  await app.register(fastifyHelmet);
 
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true, // išmeta extra fields
-      forbidNonWhitelisted: true, // meta klaidą jei atsiuntė papildomą
-      transform: true, // pavers types (pvz. string->number jei reikia)
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
       exceptionFactory: (validationErrors) => {
         const details = [
           ...new Set(
@@ -67,8 +73,6 @@ async function start() {
 
   app.setGlobalPrefix('v1');
 
-  const config = app.get<ConfigService<AppConfig>>(ConfigService);
-
   const corsConfig = config.getOrThrow<AppConfig['cors']>('cors');
   const origins = corsConfig.origins;
   app.enableCors({
@@ -87,10 +91,10 @@ async function start() {
   const env = config.get<string>('env');
 
   if (isPassenger) {
-    await app.init(); // sets up NestJS modules/routes
+    await app.init();
     const fastify = app.getHttpAdapter().getInstance();
-    await fastify.ready(); // triggers Fastify's boot phase, populating all lifecycle hooks on route contexts
-    fastify.server.listen('passenger'); // registers the server with Passenger via raw http.Server.listen()
+    await fastify.ready();
+    fastify.server.listen('passenger');
   } else {
     await app.listen(port);
   }

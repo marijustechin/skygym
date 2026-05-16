@@ -1,7 +1,6 @@
 import {
   BadRequestException,
-  HttpException,
-  HttpStatus,
+  ForbiddenException,
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
@@ -99,7 +98,7 @@ export class AuthService {
         dto.lang,
       );
     } catch (error) {
-      console.error('Nepavyko išsiųsti laiško:', error);
+      console.error('Email sending failed', error);
     }
 
     return {
@@ -117,19 +116,14 @@ export class AuthService {
     const existingUser = await this.userService.getUserForLogin(dto.email);
 
     if (!existingUser)
-      throw new UnauthorizedException('Incorect password or user email');
+      throw new UnauthorizedException('Incorrect password or user email');
 
     if (!existingUser.isEmailVerified) {
-      console.log(
-        'Nepatvirtintas el. pasto adresas. Reikia pakartotinai siusti el. pasto patvirtiniom nuoroda?',
-      );
+      throw new ForbiddenException('EMAIL_NOT_VERIFIED');
     }
 
     if (!existingUser.passwordHash)
-      throw new HttpException(
-        'Uzsiregistravo su google - nera slaptazodzio',
-        HttpStatus.BAD_REQUEST,
-      );
+      throw new UnauthorizedException('Incorrect password or user email');
 
     const password = await this.passwordService.verifyPassword(
       dto.password,
@@ -137,7 +131,7 @@ export class AuthService {
     );
 
     if (!password)
-      throw new UnauthorizedException('Incorect password or user email');
+      throw new UnauthorizedException('Incorrect password or user email');
 
     return await this.generateTokens(existingUser);
   }
@@ -179,7 +173,22 @@ export class AuthService {
       },
     );
 
-    console.log(userData);
+    const user = await this.userService.getUserForRefresh(userData.sub);
+
+    if (!user || !user.refreshTokenHash) {
+      throw new UnauthorizedException();
+    }
+
+    const isValid = await this.passwordService.verifyPassword(
+      refreshToken,
+      user.refreshTokenHash,
+    );
+
+    if (!isValid) {
+      throw new UnauthorizedException();
+    }
+
+    return await this.generateTokens(user);
   }
 
   reset() {}

@@ -1,5 +1,5 @@
-import { Body, Controller, HttpCode, Post, UseGuards } from '@nestjs/common';
-import { Throttle, ThrottlerGuard } from '@nestjs/throttler';
+import { Body, Controller, HttpCode, Post } from '@nestjs/common';
+import { Throttle } from '@nestjs/throttler';
 import {
   ApiBadRequestResponse,
   ApiInternalServerErrorResponse,
@@ -36,7 +36,6 @@ export class ContactController {
     },
   })
   @Throttle({ default: { limit: 3, ttl: 600_000 } })
-  @UseGuards(ThrottlerGuard)
   @HttpCode(200)
   @Post()
   submit(@Body() dto: ContactDto) {
