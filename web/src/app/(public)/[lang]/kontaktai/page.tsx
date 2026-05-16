@@ -3,6 +3,11 @@ import type { Language } from '@/shared/config/i18n/config';
 import { ContactForm } from '@/features/contact';
 import { InfoCard } from '@/shared/ui/info-card';
 import { Clock, FileClock, MapPin, Phone } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import norfa from '../../../../../public/img/contact-page/sporto-klubas-skygym-ateities-norfa.webp';
+import facebook from '../../../../../public/assets/icons/facebook-svgrepo-com.svg';
+import instagram from '../../../../../public/assets/icons/instagram-svgrepo-com.svg';
 
 export default async function Contacts({
   params,
@@ -21,6 +26,18 @@ export default async function Contacts({
       lines: [{ text: cards.address, important: false }],
     },
     {
+      title: cards.contacts_title,
+      icon: <Phone />,
+      lines: [
+        {
+          text: cards.phone,
+          href: `tel:${cards.phone.replace(/\s/g, '')}`,
+          important: true,
+        },
+        { text: cards.email, href: `mailto:${cards.email}`, important: false },
+      ],
+    },
+    {
       title: cards.gym_hours_title,
       icon: <Clock />,
       lines: [
@@ -34,14 +51,6 @@ export default async function Contacts({
       lines: [
         { text: cards.admin_hours_weekdays, important: false },
         { text: cards.admin_hours_weekends, important: true },
-      ],
-    },
-    {
-      title: cards.contacts_title,
-      icon: <Phone />,
-      lines: [
-        { text: cards.phone, href: `tel:${cards.phone.replace(/\s/g, '')}`, important: true },
-        { text: cards.email, href: `mailto:${cards.email}`, important: false },
       ],
     },
   ];
@@ -66,6 +75,29 @@ export default async function Contacts({
               <InfoCard key={card.title} card={card} />
             ))}
           </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Link
+              href={'https://www.facebook.com/sportas.skygym/'}
+              target="_blank"
+              className="font-semibold text-red-600 flex justify-center"
+            >
+              <Image
+                src={facebook}
+                alt="SkyGym Facebook"
+                className="h-16 w-auto"
+              />
+            </Link>
+            <Link
+              href={'https://www.instagram.com/skygym.lt/'}
+              className="font-semibold text-red-600 flex justify-center"
+            >
+              <Image
+                src={instagram}
+                alt="SkyGym Instagram"
+                className="w-auto h-16"
+              />
+            </Link>
+          </div>
         </div>
         <ContactForm langStrings={dict.forms} />
       </section>
@@ -84,6 +116,14 @@ export default async function Contacts({
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+        </div>
+        <div className="p-8">
+          <p className="font-semibold">{t.photoTitle}</p>
+          <Image
+            src={norfa}
+            alt="Sporto klubas SkyGym - Ateities Norfa"
+            className="w-full h-auto p-1 rounded-lg border border-slate-600"
+          />
         </div>
       </section>
     </div>
