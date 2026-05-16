@@ -20,6 +20,7 @@ import { User } from '../users/entities/user.entity';
 import { AuthLoginDto } from './dtos/auth-login.dto';
 import { AuthEmailVerifyDto } from './dtos/auth-email-verify.dto';
 import type { FastifyReply, FastifyRequest } from 'fastify';
+import { Public } from './decorators/public.decorator';
 
 interface CookieOptions {
   httpOnly: boolean;
@@ -47,6 +48,7 @@ export class AuthController {
   //
   // registration
   //
+  @Public()
   @ApiOperation({
     summary: 'New user registration with name, email and password',
   })
@@ -99,6 +101,7 @@ export class AuthController {
   //
   // login
   //
+  @Public()
   @ApiOperation({ summary: 'Login with email and password' })
   @ApiResponse({ status: 200, type: User })
   @HttpCode(200)
@@ -118,6 +121,7 @@ export class AuthController {
   }
 
   // verify email
+  @Public()
   @ApiOperation({ summary: 'Verify user email address' })
   @ApiResponse({
     status: 200,
@@ -137,8 +141,9 @@ export class AuthController {
   //
   // refresh access token
   //
+  @Public()
   @Post('refresh')
-  refresh(
+  async refresh(
     @Req() req: FastifyRequest,
     @Res({ passthrough: true }) res: FastifyReply,
   ) {
@@ -149,25 +154,22 @@ export class AuthController {
       throw new UnauthorizedException();
     }
 
-    // const tokens = await this.authService.refresh(refreshToken);
+    const tokens = await this.authService.refresh(refreshToken);
 
-    // if (!tokens) {
-    //   res.clearCookie('refreshToken', {
-    //     httpOnly: true,
-    //     secure: process.env.NODE_ENV === 'production',
-    //     sameSite: 'strict',
-    //   });
-    //   throw new UnauthorizedException();
-    // }
+    res.setCookie('refreshToken', tokens.refreshToken, this.cookieOptions);
 
-    //res.cookie('refreshToken', userData.refreshToken, this.cookieOptions);
-
-    return 'ka grazinam? message success?';
+    return {
+      message: 'TOKEN_REFRESHED',
+      accessToken: tokens.accessToken,
+    };
   }
 
   //
   // reset password
   //
+  @Public()
   @Post('reset')
-  reset() {}
+  reset() {
+    return this.authService.reset();
+  }
 }

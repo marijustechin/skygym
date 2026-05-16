@@ -39,6 +39,13 @@ export class UsersService {
     });
   }
 
+  async getUserForRefresh(id: string) {
+    return this.usersRepo.findOne({
+      where: { id },
+      select: ['id', 'email', 'role', 'refreshTokenHash'],
+    });
+  }
+
   async getUserByVerificationToken(token: string) {
     return this.usersRepo.findOne({
       where: { verificationToken: token },

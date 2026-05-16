@@ -56,6 +56,10 @@ export const appConfig = () => ({
   turnstile: {
     secretKey: process.env.TURNSTILE_SECRET_KEY,
   },
+
+  cookie: {
+    secret: process.env.COOKIE_SECRET || process.env.JWT_ACCESS_SECRET,
+  },
 });
 
 export type AppConfig = ReturnType<typeof appConfig>;
