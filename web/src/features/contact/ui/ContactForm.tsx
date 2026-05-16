@@ -149,12 +149,14 @@ export const ContactForm = ({ langStrings }: ContactFormProps) => {
           {errors.message && <FieldError errors={[errors.message]} />}
         </Field>
 
-        <TurnstileWidget
-          siteKey={TURNSTILE_SITE_KEY}
-          onVerify={handleTurnstileVerify}
-          onExpire={handleTurnstileExpire}
-          resetKey={turnstileResetKey}
-        />
+        <div className="flex justify-center">
+          <TurnstileWidget
+            siteKey={TURNSTILE_SITE_KEY}
+            onVerify={handleTurnstileVerify}
+            onExpire={handleTurnstileExpire}
+            resetKey={turnstileResetKey}
+          />
+        </div>
 
         {serverError && (
           <p className="text-red-500 text-sm text-center">{serverError}</p>

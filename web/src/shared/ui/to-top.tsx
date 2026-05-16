@@ -37,7 +37,7 @@ export function ToTop() {
       onClick={scrollToTop}
       aria-label="Scroll to top"
       className={cn(
-        'fixed bottom-6 right-6 z-50 size-10 rounded-full shadow-lg transition-opacity duration-300',
+        'fixed bottom-6 right-6 z-50 size-10 rounded-full shadow-lg transition-opacity duration-300 cursor-pointer',
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none',
       )}
     >

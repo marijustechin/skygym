@@ -39,7 +39,7 @@ export const DesktopMenu = ({ dict, lang }: DesktopMenuProps) => {
   return (
     <div ref={menuRef} className="hidden md:flex relative z-50">
       <button
-        className="flex items-center"
+        className="flex items-center cursor-pointer"
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isMenuOpen}
         onClick={() => setIsMenuOpen(!isMenuOpen)}

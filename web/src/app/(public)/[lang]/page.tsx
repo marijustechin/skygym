@@ -13,11 +13,11 @@ import { InfoCard } from '@/shared/ui/info-card';
 import heroImg from '../../../../public/img/home-page/pradzia-hero.webp';
 import optionGirl from '../../../../public/img/home-page/options/merginos-sporto-klube.webp';
 import optionPush from '../../../../public/img/home-page/options/skygym-spaudimas.webp';
-import optionCardio from '../../../../public/img/home-page/options/kardio-pratimai.webp';
+import optionCardio from '../../../../public/img/home-page/options/skygym-draugiska-atmosfera.webp';
 import optionBoxing from '../../../../public/img/home-page/options/skygym-boksas.webp';
-import servicePower from '../../../../public/img/home-page/options/jegos-treniruotes.webp';
-import serviceGymnastics from '../../../../public/img/home-page/options/gimnastika.webp';
-import serviceCardio from '../../../../public/img/home-page/options/paslaugos-laikinas.webp';
+import servicePower from '../../../../public/img/home-page/options/laisvi-svoriai-treniruokliai-zona.webp';
+import serviceGymnastics from '../../../../public/img/home-page/options/funkcine-zona-grupes-treniruotes.webp';
+import serviceCardio from '../../../../public/img/home-page/options/kardio-apatines-kuno-dalies-stiprinimas.webp';
 
 // ── Card Components ──────────────────────────────────────────────────────────
 
@@ -42,7 +42,7 @@ function ServiceCard({
         <Image
           alt={imageAlt}
           src={image}
-          className="h-48 w-full object-cover"
+          className="h-60 w-full object-cover"
         />
         <div
           className="absolute left-4 top-4 rounded-lg bg-white/90 p-2"
@@ -86,16 +86,24 @@ export default async function Home({
   const services = [
     {
       image: servicePower,
-      imageAlt: 'Jėgos treniruotės',
+      imageAlt: t.servicePowerTitle,
       icon: <Dumbbell className="h-5 w-5" />,
       title: t.servicePowerTitle,
       description: t.servicePowerDesc,
       items: [t.servicePowerItem1, t.servicePowerItem2, t.servicePowerItem3],
     },
     {
+      image: serviceCardio,
+      imageAlt: t.serviceCardioTitle,
+      icon: <Activity className="h-5 w-5" />,
+      title: t.serviceCardioTitle,
+      description: t.serviceCardioDesc,
+      items: [t.serviceCardioItem1, t.serviceCardioItem2, t.serviceCardioItem3],
+    },
+    {
       image: serviceGymnastics,
       imageAlt: 'Gimnastika ir tempimas',
-      icon: <Activity className="h-5 w-5" />,
+      icon: <Heart className="h-5 w-5" />,
       title: t.serviceGymnasticsTitle,
       description: t.serviceGymnasticsDesc,
       items: [
@@ -103,14 +111,6 @@ export default async function Home({
         t.serviceGymnasticsItem2,
         t.serviceGymnasticsItem3,
       ],
-    },
-    {
-      image: serviceCardio,
-      imageAlt: 'Kardio zona',
-      icon: <Heart className="h-5 w-5" />,
-      title: t.serviceCardioTitle,
-      description: t.serviceCardioDesc,
-      items: [t.serviceCardioItem1, t.serviceCardioItem2, t.serviceCardioItem3],
     },
   ];
 
@@ -183,7 +183,9 @@ export default async function Home({
                 card={{
                   title: t.optionUnlimitedAccessTitle,
                   icon: <Clock />,
-                  lines: [{ text: t.optionUnlimitedAccessText, important: false }],
+                  lines: [
+                    { text: t.optionUnlimitedAccessText, important: false },
+                  ],
                 }}
               />
             </div>
@@ -224,9 +226,11 @@ export default async function Home({
         >
           {t.sectionEquipmentTitle}
         </h2>
-
         <p className="text-center text-lg font-semibold uppercase text-red-600 md:text-xl lg:text-2xl">
           {t.sectionEquipmentSubTitle}
+        </p>
+        <p className="text-center max-w-5xl mx-auto">
+          {t.sectionEquipmentParagraph}
         </p>
         <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
